@@ -54,6 +54,11 @@ main.markdown-body p {
   text-indent: 0.7em;
 }
 
+/* ------- AweSome::本体 ------- */
+.markdown-body i.fa-solid {
+  text-indent: 0.15em;
+}
+
 /* ------- ヘッダーとフッター ------- */
 header.markdown-body {
   padding-top: 0px;
@@ -125,6 +130,11 @@ footer.markdown-body p {
 
 .markdown-body h3 {
   border-bottom: 2px solid;
+  padding-left: 0.25em;
+}
+
+.markdown-body h3 span {
+  display: none;
 }
 
 /* ------- 図 ------- */
@@ -143,6 +153,7 @@ footer.markdown-body p {
   max-width: 100%;
   height: auto;
   cursor: pointer;
+  pointer-events: none;
 }
 
 /* ------- リンク ------- */
@@ -439,7 +450,7 @@ div.note > pre {
   background: #e9b9ff; /* 2 */
 }
 
-.type-tips ul li::before {
+.type-senior ul li::before {
   color: #855aa8;
 }
 

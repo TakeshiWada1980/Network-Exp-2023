@@ -7,18 +7,11 @@
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
     <meta name="robots" content="noindex,nofollow,noarchive" />
-
     <script>
       MathJax = {
-        chtml: {
-          displayAlign: "left",
-          displayIndent: "1em",
-        },
+        chtml: { displayAlign: "left", displayIndent: "1em" },
       };
     </script>
-
-    
-
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link
       rel="stylesheet"
@@ -44,8 +37,61 @@
          <ul>
 <li><a href="#概要連絡" id="toc-概要連絡"><span
 class="toc-section-number">1</span> 概要・連絡</a></li>
-<li><a href="#定着確認" id="toc-定着確認"><span
-class="toc-section-number">2</span> 定着確認</a></li>
+<li><a href="#導入" id="toc-導入"><span
+class="toc-section-number">2</span> 導入</a>
+<ul>
+<li><a href="#インターネット通信の裏側プロトコルとは何か"
+id="toc-インターネット通信の裏側プロトコルとは何か"><span
+class="toc-section-number">2.1</span>
+インターネット通信の裏側「プロトコル」とは何か</a>
+<ul>
+<li><a href="#演習-❶" id="toc-演習-❶"><span
+class="toc-section-number">2.1.1</span> 演習 ❶</a></li>
+</ul></li>
+<li><a href="#http-hypertext-transfer-protocol"
+id="toc-http-hypertext-transfer-protocol"><span
+class="toc-section-number">2.2</span> HTTP: Hypertext Transfer
+Protocol</a>
+<ul>
+<li><a href="#演習-❷" id="toc-演習-❷"><span
+class="toc-section-number">2.2.1</span> 演習 ❷</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#html-と-css" id="toc-html-と-css"><span
+class="toc-section-number">3</span> HTML と CSS</a></li>
+<li><a href="#html" id="toc-html"><span
+class="toc-section-number">4</span> HTML</a>
+<ul>
+<li><a href="#演習-❸" id="toc-演習-❸"><span
+class="toc-section-number">4.0.1</span> 演習 ❸</a></li>
+<li><a href="#演習-❹" id="toc-演習-❹"><span
+class="toc-section-number">4.0.2</span> 演習 ❹</a></li>
+<li><a href="#htmlタグの基本" id="toc-htmlタグの基本"><span
+class="toc-section-number">4.1</span> HTMLタグの基本</a>
+<ul>
+<li><a href="#演習-❺" id="toc-演習-❺"><span
+class="toc-section-number">4.1.1</span> 演習 ❺</a></li>
+</ul></li>
+<li><a href="#cssの追加" id="toc-cssの追加"><span
+class="toc-section-number">4.2</span> CSSの追加</a>
+<ul>
+<li><a href="#演習-❻" id="toc-演習-❻"><span
+class="toc-section-number">4.2.1</span> 演習 ❻</a></li>
+<li><a href="#演習-❼" id="toc-演習-❼"><span
+class="toc-section-number">4.2.2</span> 演習 ❼</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#github-pages-を利用したウェブページの公開"
+id="toc-github-pages-を利用したウェブページの公開"><span
+class="toc-section-number">5</span> GitHub Pages
+を利用したウェブページの公開</a></li>
+<li><a href="#おまけ" id="toc-おまけ"><span
+class="toc-section-number">6</span> おまけ</a></li>
+<li><a href="#課題1-報告書1" id="toc-課題1-報告書1"><span
+class="toc-section-number">7</span> 課題1 (報告書1)</a></li>
+<li><a href="#次回-12月8日-までの準備"
+id="toc-次回-12月8日-までの準備"><span
+class="toc-section-number">8</span> 次回 (12月8日) までの準備</a></li>
 </ul> 
         <!-- ---------------------------------------- -->
       </div>
@@ -60,10 +106,725 @@ class="toc-section-number">2</span> 定着確認</a></li>
       <!-- ---------------------------------------- -->
       <h1 data-number="1" id="概要連絡"><span
       class="header-section-number">1</span> 概要・連絡</h1>
-      <h1 data-number="2" id="定着確認"><span
-      class="header-section-number">2</span> 定着確認</h1>
-      <p>後期授業ではシラバス記載のように「<strong>小テスト</strong>」を実施して成績評価に組み込みます。以下、<strong>小テストの練習問題</strong>です
-      (このままの形式で出題されるわけではありません)。</p>
+      <p>後期の「電子機械工学実験実習I」の後半では、ウェブ技術、IoT技術、AI技術に関連する実験実習を実施します。
+      具体的には、HTTP/HTTPSベースのリクエスト／レスポンス型の「ウェブサービス」や「IoTシステム」について、その仕組みや周辺技術を体験的に理解することを目的としています。また
+      <strong>Google App Script</strong>
+      を用いて、簡単なウェブサービスやウェブAPIを構築するスキルの習得を目指します。</p>
+      <p>今回は「ウェブ技術」に関する基本中の基本である
+      <strong>HTTP</strong>、<strong>HTML/CSS</strong>
+      について学びます。</p>
+      <p>また、<strong>課題 (報告書に相当するもの)</strong>
+      として、就職や進学で必要になる可能性がある「<strong>ポートフォリオ</strong>」を
+      HTML+CSS により作成してもらいます。</p>
+      <h1 data-number="2" id="導入"><span
+      class="header-section-number">2</span> 導入</h1>
+      <h2 data-number="2.1"
+      id="インターネット通信の裏側プロトコルとは何か"><span
+      class="header-section-number">2.1</span>
+      インターネット通信の裏側「プロトコル」とは何か</h2>
+      <p>普段、私たちは PC や スマートフォン
+      を使ってウェブページを閲覧しますが、このプロセスは Chrome や Edge
+      などのウェブブラウザがインターネットを経由して <span
+      class="masked">ウェブサーバ (Web
+      Server)</span>と通信することによって実現されています。このときの通信には、基本的に
+      <strong><em>HTTP</em></strong>
+      という「<strong>通信プロトコル</strong>」が用いられます。</p>
+      <p>通信プロトコルとは、<strong>通信を成立させるために必要な手順やルール、取り決め</strong>を指すものです。通信においては、両者
+      (通信元と通信先)
+      が共通のプロトコルを使用することが必要です。例えば、私たちの日常会話も
+      <span class="masked">同時に喋らない</span>、<span
+      class="masked">言語に日本語を使用する</span>、<span
+      class="masked">相手との距離に応じて適切な声量で話す</span>のような
+      (暗黙の) 共通プロトコルをもとに成立しています。</p>
+      <p>逆に言えば、<strong>通信プロトコルに従えば、使用するハードウェアやソフトウェアに関係なく通信は可能</strong>であると言えます。実際にウェブブラウザだけでなく、コマンドラインシェル
+      ( Windows の PowerShell や Linux の Bash など)
+      からも、Pythonプログラムからもウェブページの取得ができます。また、PCやスマートフォン以外に
+      <span class="masked">マイコン (マイクロコンピュータ) </span>
+      からでもウェブページの取得が可能です。</p>
+      <h3 data-number="2.1.1" id="演習-❶"><span
+      class="header-section-number">2.1.1</span> 演習 ❶</h3>
+      <p>Windows の PowerShell
+      を起動して、次のコマンドを入力してウェブページ (HTMLドキュメント)
+      が取得できることを確認せよ。また URL
+      を任意のものに書き換えても実行可能であることを確認せよ。</p>
+      <pre><code>$res = wget https://takeshiwada1980.github.io/Netwrok-Exp-2023/index.html
+$res.Content</code></pre>
+      <h2 data-number="2.2" id="http-hypertext-transfer-protocol"><span
+      class="header-section-number">2.2</span> HTTP: Hypertext Transfer
+      Protocol</h2>
+      <p>ウェブページの閲覧に際して使用される <strong>HTTP</strong> は
+      <span class="masked">Hypertext Transfer Protocol</span>
+      の頭文字をとって命名されています。URLの先頭にも
+      <code>http://</code>
+      のような表記があるため、皆さんにも馴染みがあると思います。ここでの
+      Hypertext とは <strong><em>HTMLドキュメント</em></strong>
+      を指す言葉になります (HTMLの詳細については後述)。</p>
+      <p>HTTPは、ウェブブラウザなどのクライアントからサーバに HTML を
+      <strong>リクエスト (要求)</strong> するため、また、その
+      <strong>レスポンス (応答)</strong>
+      を受け取るために設計されたプロトコルであり、インターネットの黎明期から現在まで広く使用されているプロトコルです。各種プログラミング言語でも
+      HTTP 関連のライブラリは非常に充実しています。</p>
+      <p>そのため <strong>IoT分野</strong> (=<span
+      class="masked">モノとモノがインターネットでつながりデータをやりとりすることを基盤とした価値創造</span>の分野)
+      においても、IoT向けに設計されている MQTT、XMPP、AMQP、CoAP
+      などの通信プロトコルとともに HTTP が広く使用されています。</p>
+      <div class="note type-senior">
+      <p><strong>インターネットで使用される様々なプログラム</strong></p>
+      <p>インターネットでは HTTP
+      の他に、次のような通信プロトコルが使用されています。</p>
+      <ul>
+      <li><strong>SMTP</strong>: SMTPは <span class="masked">Simple Mail
+      Transfer Protocol</span>
+      の頭文字をとったもので、<strong>電子メールの送信</strong>
+      に使用されるプロトコルです。このプロトコルは、メールサーバー間やメールクライアントからメールサーバーへのメール転送を可能にします。SMTPは、メールメッセージを信頼性高く効率的に送信するために、コマンドと応答を使用して通信します。一般に
+      <span class="masked">25</span> 番ポートを使用ます。</li>
+      <li><strong>POP3</strong>: POP3は <span class="masked">Post Office
+      Protocol version 3</span>
+      の頭文字をとったもので、<strong>電子メールの受信</strong>に使用されるプロトコルです。メールサーバー上にあるメールボックスからクライアントのデバイスにメールをダウンロードするために設計されています。POP3は、メールをローカルに保存し、オフラインでもメールアクセスできるようにするため、特に限られたネットワーク接続や低帯域幅環境に適しています。一般に
+      <span class="masked">110</span> 番ポートを使用します。</li>
+      <li><strong>NTP</strong>: NTPは <span class="masked">Network Time
+      Protocol</span>
+      の頭文字をとったものでコンピュータネットワーク上で時刻同期を行うために使用されるプロトコルです。このプロトコルは、コンピュータのシステム時計を世界標準時（UTC）に同期させることで、正確な時刻情報を提供します。NTPは、階層的なシステムを使用して、複数の時間サーバーから時刻情報を取得し、それをネットワーク内のクライアントに配信します。一般に
+      <span class="masked">123</span> 番ポートを使用します。</li>
+      <li><strong>FTP</strong>: FTPは <span class="masked">File Transfer
+      Protocol</span>
+      の頭文字をとったものでファイル転送に特化したプロトコルです。サーバーとクライアント間でファイルを転送するために使用され、ユーザーがファイルをアップロードまたはダウンロードできるようにします。FTPはネットワーク上でのファイルの移動と管理を容易にし、認証メカニズムを備えているため、ユーザー名とパスワードによるアクセス制御が可能です。一般に
+      <span class="masked">123</span> 番ポートを使用します。</li>
+      </ul>
+      </div>
+      <h3 data-number="2.2.1" id="演習-❷"><span
+      class="header-section-number">2.2.1</span> 演習 ❷</h3>
+      <p>Google Colab から次の Pythonプログラムを実行し、ウェブページ
+      (HTMLドキュメント) が取得できることを確認せよ。また、変数
+      <code>res</code> に格納される値は単なる文字列であることを確認せよ
+      (<code>type</code> 関数を利用して変数の型を調べて出力すればよい)
+      。</p>
+      <div class="sourceCode" id="cb2"
+      data-caption="HTMLドキュメントの取得"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-2"><a href="#cb2-2"></a>url <span class="op">=</span> <span class="st">&#39;https://takeshiwada1980.github.io/Netwrok-Exp-2023/index.html&#39;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>res <span class="op">=</span> requests.get(url).text</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(url)</span></code></pre></div>
+      <h1 data-number="3" id="html-と-css"><span
+      class="header-section-number">3</span> HTML と CSS</h1>
+      <p>普段、皆さんが目にしている (静的な) ウェブページは <span
+      class="masked">HTML (HyperText Markup Language) </span>と<span
+      class="masked">CSS (Cascading Style Sheets)
+      </span>という言語を組み合わせてつくられています。いずれも
+      C言語プログラム や Pythonプログラム と同じように実体は <span
+      class="masked">単なるテキストファイル</span> であり、それを Chrome
+      や Edge などのウェブブラウザが解釈して
+      <strong>レイアウトなどを整え装飾を施したウェブページとしてレンダリング</strong>
+      して表示しています。</p>
+      <div class="note type-tips">
+      <p><strong>HTMLとCSSの役割りの違い</strong></p>
+      <p><strong>HTML（HyperText Markup Language）</strong>
+      はウェブページの構造や内容 (コンテンツ)
+      を記述するために使用されます。一方で <strong>CSS（Cascading Style
+      Sheets）</strong>
+      はウェブページのレイアウトや体裁、装飾を制御するために使用されます。端的に言えば
+      HTML は <span class="masked">何を表示するか</span> を、CSSは <span
+      class="masked">どのように表示するか</span>
+      を担当する言語になります。</p>
+      <p>具体的には、HTMLでは「この部分はページのタイトルを表します」「この部分は外部サイトへのリンクです」「この部分はXXXの子要素です」のように「<strong>テキストコンテンツに対する意味付け</strong>」をします。一方で、CSSでは「このテキストは赤色で表示します」「この要素は画面の右上に配置します」といった「<strong>純粋な視覚的な情報の付与</strong>」をします。</p>
+      <p>なお <span
+      class="masked">CSSを使用せずにHTMLだけでもウェブページを作成することも可能</span>
+      です。しかし、その場合、デザインやレイアウトのカスタマイズが限られることになります。</p>
+      </div>
+      <h1 data-number="4" id="html"><span
+      class="header-section-number">4</span> HTML</h1>
+      <p><strong>HTML</strong> は <span class="masked">HyperText Markup
+      Language</span>
+      の頭文字をとった略語で、ウェブページを記述するための「<strong>マークアップ言語</strong>」です。マークアップ言語とは、プレーンテキストをマークアップする
+      (=印や記号を付け加える)
+      ことで、情報を構造化するタイプの言語です。また、<strong>HyperText
+      (ハイパーテキスト)</strong>
+      とは、ドキュメント内の任意の場所に別のドキュメントへの<strong>リンク</strong>を埋め込むことで、複数の文章を相互に連結・参照できるシステムのことを指します。</p>
+      <p>HTMLの特徴は <code>&lt;h2&gt;</code> や
+      <code>&lt;strong&gt;</code>
+      のように特定のキーワードを<strong>角括弧</strong>
+      <code>&lt;</code> と <code>&gt;</code> で囲んだ
+      <strong><em>タグ</em></strong>
+      というものでマークアップする点にあります。タグには
+      <strong>開始タグ</strong> (例えば <code>&lt;strong&gt;</code>)
+      と、<strong>終了タグ</strong> (例えば
+      <code>&lt;/strong&gt;</code>) があり、終了タグにはスラッシュ
+      <code>/</code> が付きます。また、リンクを <strong>URL (Uniform
+      Resource Locator)</strong>
+      によって与える点にも特徴があります。</p>
+      <p>HTMLの実体は <span class="masked">テキストファイル</span>
+      であるため、Windows標準アプリの「メモ帳」をはじめとして通常のテキストエディタで作成ができます。ただし、ファイルを保存する際には
+      <code>.html</code> のような拡張子を付けるようにしてください
+      (<code>.htm</code>
+      とすることもあります)。また、通常、文字コードには「<strong>UTF-8</strong>」、改行コードには「<strong>CR+LF</strong>」を使用してください。</p>
+      <div class="note type-caution">
+      <p><strong>拡張子が2重にならないように注意</strong></p>
+      <p>セキュリティの関係から<strong>拡張子は常時表示</strong>する設定にしてください。また「メモ帳」を使ってHTMLファイルを作成する際は
+      <code>test.html.txt</code> のように
+      <strong>2重拡張子にならないように注意</strong> してください。</p>
+      </div>
+      <p>一般的な Windows 環境では、HTMLファイルは <span
+      class="masked">Chrome や Edge のようなウェブブラウザ</span>
+      と紐づけられています。そのため、作成したHTMLの <span
+      class="masked">ファイルアイコンをダブルクリック</span>すれば、ブラウザが起動してレンダリングされたウェブページを確認することができます。</p>
+      <h3 data-number="4.0.1" id="演習-❸"><span
+      class="header-section-number">4.0.1</span> 演習 ❸</h3>
+      <p>「メモ帳」または「サクラエディタ」を使用して次の内容を持ったHTMLファイル
+      <code>index.html</code>
+      を作成して、デスクトップに保存せよ。また、作成したHTMLファイルをダブルクリックするとウェブブラウザ
+      (Chrome)
+      が起動し、レンダリングされたウェブページが表示されることを確認せよ。また、HTMLファイルをテキストエディタにドラッグアンドドロップすることで再編集できることを確認せよ。</p>
+      <p>さらに、ウェブブラウザ (Chrome) で <code>F12</code> または
+      <code>Ctrl+Shift+I</code> を押下するとデベロッパーツール
+      (開発者ツール)
+      が起動し、ウェブページをリロードすると、「コンソール」のタブに
+      <strong>ウェページの問題が出力されること</strong> を確認せよ
+      (<span class="masked">Failed to load resource:
+      net::ERR_FILE_NOT_FOUND curryrice.jpg</span>
+      が表示されるはずである)。</p>
+      <div class="sourceCode" id="cb3" data-caption="index.html"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">&quot;ja&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">&lt;title&gt;</span>XXX&#39;s Curry Recipe<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="kw">&lt;meta</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="ot">      name=</span><span class="st">&quot;viewport&quot;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ot">      content=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="kw">/&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  <span class="kw">&lt;body&gt;</span> <span class="co">&lt;!-- ここから本文開始 --&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a>    <span class="kw">&lt;h1&gt;</span>XXX&#39;s Curry Recipe<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>      我が家に伝わる一子相伝・門外不出の<span class="kw">&lt;strong&gt;</span>秘伝のカレーレシピ<span class="kw">&lt;/strong&gt;</span>を</span>
+<span id="cb3-17"><a href="#cb3-17"></a>      今だけ特別に大公開！<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>      このカレーがなぜ代々受け継がれてきたのか、その魅力をあなたも実感してください。</span>
+<span id="cb3-19"><a href="#cb3-19"></a>      秘伝のスパイスと調理法、家族を幸せにする魔法の一皿を体験してください！</span>
+<span id="cb3-20"><a href="#cb3-20"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a>    <span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;curryrice.jpg&quot;</span> <span class="er">alt</span><span class="ot">=</span><span class="st">&quot;カレーライスの画像&quot;</span> <span class="er">width</span><span class="ot">=</span><span class="st">&quot;100%&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a></span>
+<span id="cb3-24"><a href="#cb3-24"></a>    <span class="kw">&lt;h2&gt;</span>材料<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a>    <span class="kw">&lt;p&gt;</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>      <span class="kw">&lt;strong&gt;</span>8皿分の分量<span class="kw">&lt;/strong</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a>      <span class="kw">&gt;</span>です。予算や気分にあわせて具材を追加したり、量を調整してください。</span>
+<span id="cb3-28"><a href="#cb3-28"></a>    <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a></span>
+<span id="cb3-30"><a href="#cb3-30"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a>      <span class="kw">&lt;li&gt;</span>市販のカレールー（中辛）... 1/2箱<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-32"><a href="#cb3-32"></a>      <span class="kw">&lt;li&gt;</span>鶏肉 ... 400g<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-33"><a href="#cb3-33"></a>      <span class="kw">&lt;li&gt;</span>玉ねぎ ... 3個（中サイズ）<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-34"><a href="#cb3-34"></a>      <span class="kw">&lt;li&gt;</span>にんにく ... 1片<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35"></a>      <span class="kw">&lt;li&gt;</span>水 ... 700ml<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-36"><a href="#cb3-36"></a>      <span class="kw">&lt;li&gt;</span>サラダ油 ... 大さじ1<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-37"><a href="#cb3-37"></a>      <span class="kw">&lt;li&gt;</span></span>
+<span id="cb3-38"><a href="#cb3-38"></a>        <span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://ja.wikipedia.org/wiki/ガラムマサラ&quot;</span><span class="kw">&gt;</span>ガラムマサラ<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb3-39"><a href="#cb3-39"></a>        ... 適量</span>
+<span id="cb3-40"><a href="#cb3-40"></a>      <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-41"><a href="#cb3-41"></a>    <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb3-42"><a href="#cb3-42"></a></span>
+<span id="cb3-43"><a href="#cb3-43"></a>    <span class="kw">&lt;h2&gt;</span>作り方<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb3-44"><a href="#cb3-44"></a>    <span class="kw">&lt;p&gt;</span>近日大公開！<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb3-45"><a href="#cb3-45"></a>  <span class="kw">&lt;/body&gt;</span> <span class="co">&lt;!-- ここまで本文終了 --&gt;</span></span>
+<span id="cb3-46"><a href="#cb3-46"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+      <h3 data-number="4.0.2" id="演習-❹"><span
+      class="header-section-number">4.0.2</span> 演習 ❹</h3>
+      <p><code>&lt;img src="curryrice.jpg" alt="カレーライスの画像" width="100%"/&gt;</code>
+      のタグにより画像を表示するために、次の画像をダウンロードして
+      index.html と同じ階層に curryrice.jpg という名前で保存せよ
+      (この画像は生成系AIで作成したものであり、著作権などの問題はない)
+      。</p>
+      <p>また、ブラウザをリロードして
+      (ショートカットキーは<code>F5</code>) 、<code>index.html</code>
+      を表示したページ内に「カレーの画像」が表示されることを確認せよ。画面を右クリックして「<strong>ページのソースを表示</strong>」で、HTMLファイルが表示できることを確認せよ。</p>
+      <figure>
+      <img src="figs/01/curryrice.jpg" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="4.1" id="htmlタグの基本"><span
+      class="header-section-number">4.1</span> HTMLタグの基本</h2>
+      <p>HTMLで利用可能なタグについては「<a
+      href="https://www.google.com/search?q=HTML+タグ一覧">HTML
+      タグ一覧</a>」でウェブ検索して調べることができます。ここでは、主要なタグについて概要を示します。</p>
+      <ul>
+      <li><code>&lt;meta charset="utf-8" /&gt;</code>:
+      このファイルの文字エンコーディングが「<strong>UTF-8</strong>」であることを示しています。実際のファイルの文字コードにあわせて適切に設定しないと
+      <span class="masked">文字化け</span> が生じます。</li>
+      <li><code>&lt;title&gt;</code>:
+      ブラウザの<strong>タブ</strong>に表示される「<strong>ページタイトル</strong>」を設定します。実際に書き換えて、それが反映されることを確認してください。</li>
+      <li><code>&lt;body&gt;</code>:
+      この要素内にページの主要なコンテンツ (テキスト、画像、リンクなど)
+      を配置します。</li>
+      <li><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>: 見出し
+      (heading) を作成します。<code>&lt;h1&gt;</code> はトップレベル
+      (第1レベル) の見出し、<code>&lt;h2&gt;</code> はその次のレベル
+      (第2レベル) の見出しを意味します。</li>
+      <li><code>&lt;p&gt;</code>: 段落 (パラグラフ) を作成します。</li>
+      <li><code>&lt;strong&gt;</code>: テキストを強調します。</li>
+      <li><code>&lt;img&gt;</code>:
+      画像を埋め込みます。<code>src</code>属性でファイルパス、<code>alt</code>属性で代替テキスト、<code>width</code>属性で幅を指定します。</li>
+      <li><code>&lt;ul&gt;</code>:
+      黒丸を行頭記号とする箇条書きを作成します。この要素の内部に
+      <code>&lt;li&gt;</code> を配置します。
+      <ul>
+      <li><code>&lt;li&gt;</code>:
+      箇条書き、番号付き箇条書きの各項目を定義します。</li>
+      </ul></li>
+      <li><code>&lt;a&gt;</code>: アンカータグです。<span
+      class="masked">ハイパーリンク</span> を作成する際に使用され
+      <code>href</code> 属性でリンク先URLを指定します。</li>
+      </ul>
+      <p>なお、各タグの詳細についてはウェブ検索の他、<a
+      href="https://chat.openai.com/chat">ChatGPT</a>や Bing AI
+      などで「<strong>HTMLの</strong><code>&lt;a&gt;</code><strong>タグについて初心者向けに解説してください</strong>」のように質問することで詳しく知ることができます。</p>
+      <ul>
+      <li>参考: <a
+      href="https://chat.openai.com/share/716c1518-13da-4362-a741-4e5377591e59">ChatGPT-4を使った質問例・回答例</a>。</li>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>生成系AIの利活用のススメ</strong></p>
+      <p>今後、あらゆる場面で生成系AIの利活用が求められるようになります。早い段階から生成系AIに触れて、慣れておいてください。</p>
+      </div>
+      <h3 data-number="4.1.1" id="演習-❺"><span
+      class="header-section-number">4.1.1</span> 演習 ❺</h3>
+      <p>次の要求に従って <code>index.html</code> を書き換えよ。</p>
+      <ul>
+      <li>ブラウザのタブと、ページトップに表示されるタイトルを「高専太郎’s
+      Curry
+      Recipe」に変更したい(「高専太郎」の部分は各自の名前を設定すること)。</li>
+      <li>カレーの材料に「じゃがいも … 2個」を追加したい。</li>
+      <li>カレーの材料に「ターメリック …
+      適量」を追加したい。また、ターメリックの文字をクリックしたときに
+      Wikipedia の当該ページに遷移するようにしたい。</li>
+      <li>材料の説明文において「8皿分の分量です。」のあとに 改行
+      を入れて「予算や気分にあせて・・・」を表示したい。</li>
+      </ul>
+      <p>いずれも、既に記述済みの HTML
+      を<strong>注意深く観察すれば</strong>、そこに ヒント
+      (ほぼほぼ解答) があります。</p>
+      <h2 data-number="4.2" id="cssの追加"><span
+      class="header-section-number">4.2</span> CSSの追加</h2>
+      <p>つづいて、ウェブページの
+      <strong>レイアウトや装飾を定義するCSSファイル</strong>
+      をプロジェクトフォルダに追加します。<code>main.css</code>
+      というファイルを新規作成して、以下の内容を貼り付けて保存してください。</p>
+      <div class="sourceCode" id="cb4" data-caption="main.css"><pre
+      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a>html {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">-ms-text-size-adjust</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">-webkit-text-size-adjust</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Yusei Magic&quot;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  --theme-color-1<span class="in">: #f50</span>;</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  --theme-color-2<span class="in">: #fc3</span>;</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="kw">color</span>: <span class="cn">#454545</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>}</span>
+<span id="cb4-9"><a href="#cb4-9"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a>body {</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--main-foreground</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="kw">line-height</span>: <span class="dv">1.5</span><span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="kw">word-wrap</span>: <span class="dv">break-word</span><span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="kw">box-sizing</span>: <span class="dv">border-box</span><span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>  <span class="kw">max-width</span>: <span class="dv">980</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>  <span class="kw">margin</span>: <span class="dv">2</span><span class="dt">em</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="kw">padding</span>: <span class="dv">0</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>}</span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a>h1 {</span>
+<span id="cb4-21"><a href="#cb4-21"></a>  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a>  <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="kw">font-size</span>: <span class="dv">280</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a>  <span class="kw">padding</span>: <span class="dv">0.2</span><span class="dt">em</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>  <span class="kw">letter-spacing</span>: <span class="dv">0.1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>  <span class="kw">text-shadow</span>: <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>    <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.5</span><span class="fu">)</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a>  <span class="kw">background</span>: <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a>  <span class="kw">box-shadow</span>: <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>  <span class="kw">border</span>: <span class="dv">dashed</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a>}</span>
+<span id="cb4-34"><a href="#cb4-34"></a></span>
+<span id="cb4-35"><a href="#cb4-35"></a>h1<span class="in">::after</span> {</span>
+<span id="cb4-36"><a href="#cb4-36"></a>  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a>  <span class="kw">content</span>: <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a>  <span class="kw">left</span>: <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>  <span class="kw">top</span>: <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a>  <span class="kw">border-width</span>: <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-41"><a href="#cb4-41"></a>  <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb4-42"><a href="#cb4-42"></a>  <span class="kw">border-color</span>: <span class="cn">#fff</span> <span class="cn">#fff</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-43"><a href="#cb4-43"></a>  <span class="kw">box-shadow</span>: <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.15</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-44"><a href="#cb4-44"></a>}</span>
+<span id="cb4-45"><a href="#cb4-45"></a></span>
+<span id="cb4-46"><a href="#cb4-46"></a>h2 {</span>
+<span id="cb4-47"><a href="#cb4-47"></a>  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a>  <span class="kw">font-size</span>: <span class="dv">200</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a>  <span class="kw">letter-spacing</span>: <span class="dv">0.05</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a>  <span class="kw">font-weight</span>: <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a>  <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a>  <span class="kw">border-bottom</span>: <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a>}</span>
+<span id="cb4-54"><a href="#cb4-54"></a></span>
+<span id="cb4-55"><a href="#cb4-55"></a>h2<span class="in">::before</span> {</span>
+<span id="cb4-56"><a href="#cb4-56"></a>  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a>  <span class="kw">left</span>: <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
+<span id="cb4-60"><a href="#cb4-60"></a>  <span class="kw">content</span>: <span class="st">&quot;</span><span class="sc">\f5ad</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb4-61"><a href="#cb4-61"></a>  <span class="kw">top</span>: <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-62"><a href="#cb4-62"></a>  <span class="kw">font-size</span>: <span class="dv">85</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-63"><a href="#cb4-63"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-64"><a href="#cb4-64"></a>}</span>
+<span id="cb4-65"><a href="#cb4-65"></a></span>
+<span id="cb4-66"><a href="#cb4-66"></a>img {</span>
+<span id="cb4-67"><a href="#cb4-67"></a>  <span class="kw">box-shadow</span>: <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.35</span><span class="fu">)</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a>  <span class="kw">border-radius</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-69"><a href="#cb4-69"></a>}</span>
+<span id="cb4-70"><a href="#cb4-70"></a></span>
+<span id="cb4-71"><a href="#cb4-71"></a>strong {</span>
+<span id="cb4-72"><a href="#cb4-72"></a>  <span class="kw">font-style</span>: <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb4-73"><a href="#cb4-73"></a>  <span class="kw">font-weight</span>: <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb4-74"><a href="#cb4-74"></a>  <span class="kw">font-size</span>: <span class="dv">125</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-75"><a href="#cb4-75"></a>  <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-76"><a href="#cb4-76"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-77"><a href="#cb4-77"></a>}</span>
+<span id="cb4-78"><a href="#cb4-78"></a></span>
+<span id="cb4-79"><a href="#cb4-79"></a>a {</span>
+<span id="cb4-80"><a href="#cb4-80"></a>  <span class="kw">text-decoration</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-82"><a href="#cb4-82"></a>  <span class="kw">cursor</span>: <span class="dv">pointer</span><span class="op">;</span></span>
+<span id="cb4-83"><a href="#cb4-83"></a>  <span class="kw">border-bottom</span>: <span class="dv">1.5</span><span class="dt">px</span> <span class="dv">dashed</span><span class="op">;</span></span>
+<span id="cb4-84"><a href="#cb4-84"></a>  <span class="kw">transition</span>: background-color <span class="dv">0.5</span><span class="dt">s</span><span class="op">;</span></span>
+<span id="cb4-85"><a href="#cb4-85"></a>}</span>
+<span id="cb4-86"><a href="#cb4-86"></a></span>
+<span id="cb4-87"><a href="#cb4-87"></a>a<span class="in">:hover</span> {</span>
+<span id="cb4-88"><a href="#cb4-88"></a>  <span class="kw">color</span>: <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb4-89"><a href="#cb4-89"></a>  <span class="kw">background-color</span>: <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-90"><a href="#cb4-90"></a>  <span class="kw">border-radius</span>: <span class="dv">4</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb4-91"><a href="#cb4-91"></a>  <span class="kw">border-bottom</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb4-92"><a href="#cb4-92"></a>}</span>
+<span id="cb4-93"><a href="#cb4-93"></a></span>
+<span id="cb4-94"><a href="#cb4-94"></a>ul {</span>
+<span id="cb4-95"><a href="#cb4-95"></a>  <span class="kw">list-style</span>: <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb4-96"><a href="#cb4-96"></a>  <span class="kw">padding</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-97"><a href="#cb4-97"></a>  <span class="kw">margin-block-start</span>: <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-98"><a href="#cb4-98"></a>  <span class="kw">margin-block-end</span>: <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-99"><a href="#cb4-99"></a>}</span>
+<span id="cb4-100"><a href="#cb4-100"></a></span>
+<span id="cb4-101"><a href="#cb4-101"></a>ul li {</span>
+<span id="cb4-102"><a href="#cb4-102"></a>  <span class="kw">position</span>: <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb4-103"><a href="#cb4-103"></a>  <span class="kw">padding</span>: <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.6</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-104"><a href="#cb4-104"></a>  <span class="kw">margin</span>: <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-105"><a href="#cb4-105"></a>  <span class="kw">text-indent</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-106"><a href="#cb4-106"></a>}</span>
+<span id="cb4-107"><a href="#cb4-107"></a></span>
+<span id="cb4-108"><a href="#cb4-108"></a>ul li<span class="in">::before</span> {</span>
+<span id="cb4-109"><a href="#cb4-109"></a>  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb4-110"><a href="#cb4-110"></a>  <span class="kw">left</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-111"><a href="#cb4-111"></a>  <span class="kw">top</span>: <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb4-112"><a href="#cb4-112"></a>  <span class="kw">font-size</span>: <span class="dv">75</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-113"><a href="#cb4-113"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
+<span id="cb4-114"><a href="#cb4-114"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb4-115"><a href="#cb4-115"></a>  <span class="kw">content</span>: <span class="st">&quot;</span><span class="sc">\f816</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a>}</span></code></pre></div>
+      <p>さらに <code>index.html</code> ファイルなかの
+      <code>&lt;head&gt;</code> から <code>&lt;/head&gt;</code>
+      の範囲を<strong>次の内容に差し替えて上書き保存してください</strong>。<code>&lt;link&gt;</code>
+      タグを使用して <span
+      class="masked">各種スタイルシートを取得して読み込ませる</span>
+      ようにしています。</p>
+      <div class="sourceCode" id="cb5"
+      data-caption="index.html (抜粋)"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">&lt;title&gt;</span>XXX&#39;s Curry Recipe<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="kw">&lt;meta</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="ot">    name=</span><span class="st">&quot;viewport&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="ot">    content=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="kw">&lt;link</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="ot">    rel=</span><span class="st">&quot;stylesheet&quot;</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="ot">    href=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="kw">&lt;link</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="ot">    rel=</span><span class="st">&quot;stylesheet&quot;</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="ot">    href=</span><span class="st">&quot;https://fonts.googleapis.com/css2?family=Yusei+Magic</span><span class="er">&amp;</span><span class="st">display=swap&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>  <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;stylesheet&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;main.css&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
+      <p>第07行目にある1個目の<code>&lt;link&gt;</code>タグでは「<strong>アイコンフォントライブラリ</strong>」を提供している<a
+      href="https://fontawesome.com/icons/categories">FontAwesome</a>というサービス関連のスタイルシートを読み込んでいます。これにより<i class="fa-solid fa-fish-fins"></i>
+      <i class="fa-solid fa-faucet-drip"></i>
+      <i class="fa-solid fa-poo"></i> <i class="fa-solid fa-skull"></i>
+      のようなアイコンを装飾として利用できるようになります。</p>
+      <p>第10行目にある2個目の<code>&lt;link&gt;</code>タグでは <a
+      href="https://fonts.google.com/?subset=japanese">Google
+      Fonts</a>から <code>Yusei Magic</code> (油性マジック)
+      という日本語フォントのスタイルシートを読み込んでいます。閲覧環境・閲覧デバイスに左右されることなく、同じフォントで描画されたウェブページを提供可能になります。</p>
+      <p>第13行目にある3個目の<code>&lt;link&gt;</code>タグでは、先ほど作成した
+      <code>main.css</code>
+      というオリジナルのスタイルシートを読み込んでいます。</p>
+      <p>上記の書き換えが完了したら
+      (HTMLもCSSも上書き保存されていることを確認したら)
+      、改めてウェブブラウザで <code>index.html</code>
+      を開いて表示を確認してください。CSS (スタイルシート)
+      が適用されたことで <strong>雰囲気や UI/UX
+      が大きく改善</strong>されたことが確認できるはずです。</p>
+      <div class="note type-tips">
+      <p><strong>Chrome のデベロッパーツール</strong></p>
+      <p>Google Chrome で <code>F12</code> または
+      <code>Ctrl+Shift+I</code> を押下すると「<strong>デベロッパーツール
+      (開発者向けツール) </strong>」が起動します。デベロッパーツールでは
+      <span
+      class="masked">スマートフォンやタブレットなどのモバイルデバイス画面をエミュレート</span>
+      することができます。</p>
+      <figure>
+      <img src="figs/01/chrome_dev_tool.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>プリセットとして用意されているデバイス・機種は限られているので、必要に応じて下記URLの情報を参考にエミュレートデバイスを追加・設定してください。上記画像の「iPhone
+      15 Pro」はカスタムで追加・設定したものです。</p>
+      <ul>
+      <li>https://github.com/amirshnll/custom-device-emulation-chrome</li>
+      </ul>
+      <p>この他、デベロッパーツールでは HTML / CSS / JavaScript
+      の開発に役立つ機能が多数利用できます。詳しくは「<a
+      href="https://www.google.com/search?q=Chrome+DevTools+使い方">Chrome
+      DevTools 使い方</a>」などでウェブ検索してください。</p>
+      </div>
+      <h3 data-number="4.2.1" id="演習-❻"><span
+      class="header-section-number">4.2.1</span> 演習 ❻</h3>
+      <p>ページ内の文字に適用されるフォントは、<strong>HTMLファイル</strong>の
+      <code>&lt;head&gt;...&lt;head&gt;</code>
+      に記載された<strong>外部スタイルシートの参照リンク</strong>と…</p>
+      <div class="sourceCode" id="cb6"
+      data-caption="index.html (抜粋)"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;link</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ot">  rel=</span><span class="st">&quot;stylesheet&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="ot">  href=</span><span class="st">&quot;https://fonts.googleapis.com/css2?family=Yusei+Magic</span><span class="er">&amp;</span><span class="st">display=swap&quot;</span> <span class="kw">/&gt;</span></span></code></pre></div>
+      <p><strong>CSSファイル</strong>の <strong>第04行目</strong> の
+      <code>font-family: "Yusei Magic", sans-serif;</code>
+      によって設定されている。</p>
+      <div class="sourceCode" id="cb7"
+      data-caption="main.css (抜粋)"><pre
+      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1"></a>html {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="kw">-ms-text-size-adjust</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="kw">-webkit-text-size-adjust</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Yusei Magic&quot;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  --theme-color-1<span class="in">: #f50</span>;</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  --theme-color-2<span class="in">: #fc3</span>;</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="kw">color</span>: <span class="cn">#454545</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>}</span></code></pre></div>
+      <p>これらを書き換えることで、ページに適用される<strong>ウェブフォント</strong>を変更できる。それぞれに記述すべきコードは<a
+      href="https://fonts.google.com/?subset=japanese">Google Fonts</a>
+      にアクセスして、そこから取得することができる。</p>
+      <figure>
+      <img src="figs/01/google-font-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>例えば次のように変更する。</p>
+      <div class="sourceCode" id="cb8"
+      data-caption="index.html [diff]"><pre
+      class="sourceCode numberSource diff numberLines"><code class="sourceCode diff"><span id="cb8-1"><a href="#cb8-1"></a><span class="st">- href=&quot;https://fonts.googleapis.com/css2?family=Yusei+Magic&amp;display=swap&quot; /&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="va">+ href=&quot;https://fonts.googleapis.com/css2?family=DotGothic16&amp;display=swap&quot; /&gt;</span></span></code></pre></div>
+      <div class="sourceCode" id="cb9"
+      data-caption="main.css [diff]"><pre
+      class="sourceCode numberSource diff numberLines"><code class="sourceCode diff"><span id="cb9-1"><a href="#cb9-1"></a><span class="st">- font-family: &quot;Yusei Magic&quot;, sans-serif;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="va">+ font-family: &#39;DotGothic16&#39;, sans-serif;</span></span></code></pre></div>
+      <p>ページのフォントを適当なものに変更し、その動作確認をせよ。</p>
+      <h3 data-number="4.2.2" id="演習-❼"><span
+      class="header-section-number">4.2.2</span> 演習 ❼</h3>
+      <p><code>&lt;h2&gt;...&lt;/h2&gt;</code> に設定される
+      <i class="fa-solid fa-pen-nib"></i> アイコンは、CSSの
+      <strong>第60行目</strong>
+      (下記の抜粋版では<strong>第06行目</strong>) の
+      <code>content: "\f5ad";</code> により設定されている。</p>
+      <div class="sourceCode" id="cb10"
+      data-caption="main.css (抜粋)"><pre
+      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1"></a>h2<span class="in">::before</span> {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="kw">position</span>: <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="kw">left</span>: <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="kw">font-family</span>: <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="kw">content</span>: <span class="st">&quot;</span><span class="sc">\f5ad</span><span class="st">&quot;</span><span class="op">;</span> </span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="kw">top</span>: <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="kw">font-size</span>: <span class="dv">85</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="kw">color</span>: <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>}</span></code></pre></div>
+      <p>たとえば、これを <i class="fa-solid fa-utensils"></i>
+      に置き換えるには、<a
+      href="https://fontawesome.com/icons/utensils?f=classic&amp;s=solid">当該アイコンの詳細ページ</a>
+      に移動し、左上の <code>Unicode</code> を参考に
+      <code>content: "\f5ad";</code> の <code>f5ad</code> を
+      <code>f2e7</code> に書き換えればよい。</p>
+      <div class="sourceCode" id="cb11"
+      data-caption="main.css [diff]"><pre
+      class="sourceCode numberSource diff numberLines"><code class="sourceCode diff"><span id="cb11-1"><a href="#cb11-1"></a><span class="st">- content: &quot;\f5ad&quot;; </span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="va">+ content: &quot;\f2e7&quot;; </span></span></code></pre></div>
+      <figure>
+      <img src="figs/01/awesome-icon-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>また、文章中にアイコンを入れたい場合は、同ページの下部から
+      <code>&lt;i class="fa-solid fa-utensils"&gt;&lt;/i&gt;</code>
+      をコピーしてくればよい。Awesome アイコンは <a
+      href="https://fontawesome.com/search">ここ</a>
+      から検索することができる
+      (無料利用可能なアイコンは「<i class="fa-solid fa-bolt"></i>Free」でフィルタ検索することができる)。</p>
+      <p>以上を踏まえて、以下に取り組め。</p>
+      <ul>
+      <li><code>&lt;h2&gt;...&lt;/h2&gt;</code>
+      に設定されているアイコンを適当なものに変更せよ。</li>
+      <li><code>&lt;li&gt;...&lt;/li&gt;</code>
+      に設定されているアイコンを適当なものに変更せよ。</li>
+      <li><strong>材料</strong>
+      のなかの文章「量を調整してください。」を「量を調整してください<i class="fa-regular fa-face-laugh-squint"></i>」に変更せよ。</li>
+      </ul>
+      <h1 data-number="5"
+      id="github-pages-を利用したウェブページの公開"><span
+      class="header-section-number">5</span> GitHub Pages
+      を利用したウェブページの公開</h1>
+      <p><a
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0/m/NTkwNzYwNTA1NjU3/details">こちらの資料</a>(本科1年生向けの資料)
+      を参考に、GitHubアカウントの作成し、GitHub Pages
+      を利用してウェブページを公開するチュートリアルに取り組んでください。</p>
+      <p>なお、個人PCに Git をインストールして、そこから GitHub
+      にプッシュしたい場合は、下記の資料を参考にしてください
+      (情報系学科の本科2年生向けの資料です)。</p>
+      <ul>
+      <li><a
+      href="https://takeshiwada1980.github.io/Programming1-2023/lecture14.html">Git/GitHub入門❶</a></li>
+      <li><a
+      href="https://takeshiwada1980.github.io/Programming1-2023/lecture15.html">Git/GitHub入門❷</a></li>
+      </ul>
+      <h1 data-number="6" id="おまけ"><span
+      class="header-section-number">6</span> おまけ</h1>
+      <div class="note type-senior">
+      <p><strong>HTMLの構文解析</strong></p>
+      <p>Python では <strong>beautifulsoup4</strong>
+      というライブラリを利用して「HTMLの構文解析」を簡単に実行することができます。例えば、HTMLドキュメントから
+      <code>&lt;h2&gt;</code>
+      タグの内容を全て列挙するようなプログラムは次のように書くことができます。</p>
+      <div class="sourceCode" id="cb12"
+      data-caption="HTML構文解析の例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> requests</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>url <span class="op">=</span> <span class="st">&#39;https://takeshiwada1980.github.io/Netwrok-Exp-2023/index.html&#39;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>res <span class="op">=</span> requests.get(url).text</span>
+<span id="cb12-6"><a href="#cb12-6"></a>soup <span class="op">=</span> BeautifulSoup(res,<span class="st">&#39;html.parser&#39;</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a></span>
+<span id="cb12-8"><a href="#cb12-8"></a>h2_tags <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="cf">for</span> tag <span class="kw">in</span> h2_tags:</span>
+<span id="cb12-10"><a href="#cb12-10"></a>  <span class="bu">print</span>(<span class="ss">f&#39;・</span><span class="sc">{</span>tag<span class="sc">.</span>text<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      </div>
+      <h1 data-number="7" id="課題1-報告書1"><span
+      class="header-section-number">7</span> 課題1 (報告書1)</h1>
+      <p><strong>HTML</strong>と<strong>CSS</strong>を使用して、今後の「就職」や「進学」などの<strong>キャリア活動に利用可能な</strong>
+      <strong><em>ポートフォリオ</em></strong>
+      を作成してください。無論、<span class="masked">HTML/CSS
+      の他に、JavsScript</span> を使用しても構いません
+      (歓迎です)。作成したポートフォリオは <strong>GitHub Pages</strong>
+      で公開し、その URL (= https://xxxxx.github.io/yyy/zzz.html) を <a
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0">GoogleClassroom</a>
+      を通じて提出してください。</p>
+      <ul>
+      <li><strong><em>提出期限</em></strong> 2023年12月21日 (木) 23時
+      <ul>
+      <li>取組みの目安となる時間: <strong>240分</strong> (4時間)。</li>
+      </ul></li>
+      <li><strong><em>評価</em></strong>「8点」を標準として「10点満点」で評価します
+      (成績評価の際には「重み」が付けられます)。</li>
+      <li><strong><em>提出先</em></strong> <a
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0">GoogleClassroom</a></li>
+      <li><strong><em>想定する閲覧者</em></strong>
+      <ul>
+      <li>企業の採用担当者 (人事) と技術者。</li>
+      <li>大学において、高専からの編入学希望者の研究室見学を受け入れる教授。</li>
+      </ul></li>
+      <li>提出された課題は
+      <strong>メカトロニクスコースの教員とクラスの学生に共有
+      (公開)</strong> します。</li>
+      </ul>
+      <p>今回作成してもらうものは「第1版」として位置づけであり、今後の学生生活で、卒業研究の内容など、コンテンツを追加・更新し、構造やデザインをブラッシュアップしていくものと捉えてください。</p>
+      <div class="note type-tips">
+      <p><strong>ポートフォリオとは</strong></p>
+      <p>エンジニア (主にICT系)
+      を目指す学生にとっての「<strong>ポートフォリオ</strong>」とは
+      <span
+      class="masked">自分のスキルや経験・活動、制作物をまとめて示すもの</span>
+      です。履歴書や職務経歴書が「経歴」を示すことに対し、ポートフォリオは「<strong>自分が何ができるのか</strong>」を具体的にアピールし、証明する資料となります。</p>
+      <p>特に <span
+      class="masked">ゲーム業界やエンターテインメント業界のソフトウェアエンジニア</span>
+      を目指す場合、その就職における (意欲や技術面の)
+      評価として「ポートフォリオ」が重要視されます。</p>
+      <p>具体的な内容としては「自己紹介
+      (所属や年齢)」「<strong>スキルセット
+      (使用経験のある工作機械やソフトウェア)</strong>」「<strong>得意分野</strong>」「<strong>製作物の概要
+      (写真や動画) </strong>」「<strong>保有資格
+      (技術系/その他)</strong>」「<strong>(学内外の)
+      プロジェクト活動・コンテスト・イベント・セミナー・プロジェクト・会社見学・インターンシップなどの取り組みの記録</strong>
+      (現在進行形のものをむ)」「 GutHub / AtCoder / Techful / SNS /
+      ブログ / YouTube などのリンク や 連絡先 (メールアドレスなど)
+      」などを記載します。ただし、すべてを網羅するのではなく、目的に応じてアピールしたい情報を選んで記載します。</p>
+      <p>以下、ポートフォリオの作成例は「<a
+      href="https://www.google.com/search?q=高専+ポートフォリオ+site:github.io">高専
+      ポートフォリオ
+      site:github.io</a>」で検索すると参考になる様々なポートフォリオを見つけることができます。</p>
+      <p>メカトロニクスコースの先輩のポートフォリオとしては、以下のものが参考になると思います。</p>
+      <ol type="1">
+      <li><a
+      href="https://herorobo.github.io/portfolio/">https://herorobo.github.io/portfolio/</a></li>
+      </ol>
+      <p>構成や書き方についての詳細は「<a
+      href="https://www.google.com/search?q=ポートフォリオ+IT業界+学生">ポートフォリオ
+      IT業界
+      学生</a>」などで検索してみてください。また、テンプレートなども公開されているので、第1版では、それを利用することもお勧めします。また、<strong>今回のカレーレシピの
+      HTML/CSS も有効に利用してください
+      (これを利用すれば、最低限のページは作成できるはずです)</strong>。</p>
+      </div>
+      <p>ポートフォリオのを構成するコンテンツ や レイアウト
+      (デザインを含む)
+      は自由ですが、次の内容については必ず含めるようにしてください。</p>
+      <ul>
+      <li>所属と学年 /
+      年齢。最もぼかした表現としては「高専4年生」「高専生(19歳)」。無論、より詳しく記載してもOKです。</li>
+      <li>基礎研究の成果物とプロジェクト概要の説明
+      (プロジェクトの位置づけ、取組み期間、チーム人数、自分の役割・担当)。写真や動画などを付けてください
+      (必ず1枚以上の写真をつけてください)。</li>
+      <li>各種工作機械やプログラミング言語、ソフトウェア
+      (ウェブサービス) に関する経験・スキルを示すもの。
+      <ul>
+      <li>工作機械としては、卓上旋盤、卓上ボール盤、レーザーカッタ、3Dプリンタについては学校授業レベルの使用経験があるはずです。</li>
+      <li>プログラミング言語やソフトウェア (ウェブサービス)
+      としては少なくとも「Python言語」「Arduino言語」「Fusion
+      360」「KiCad」「Creo
+      Parametric」については学校授業レベルの使用経験があるはずです。</li>
+      <li>閲覧者が皆さんのスキルや経験を適切に評価できるように、明確かつ適切に記述する必要があります。<strong>誤解を招かないように</strong>
+      (=<span
+      class="masked">過大評価あるいは過小評価されないように</span>)、自身の経験やスキルを
+      <strong>客観的</strong> かつ <strong>具体的</strong>
+      に記載するように意識してください。</li>
+      <li>ポートフォリオの書き方や構成に<strong>「正解」は存在しません</strong>。悩むところがあれば、クラスメイトと一緒に考えたり、ChatGPT
+      に相談したり、ウェブで公開されている多数のポートフォリオを参考にしたりしてください。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="8" id="次回-12月8日-までの準備"><span
+      class="header-section-number">8</span> 次回 (12月8日)
+      までの準備</h1>
+      <p>次回は、<strong>生成系AI (生成型AI)</strong>
+      に関する内容を取り上げます。そのなかで Microsoft Bing
+      を使用するため、その準備として
+      <strong>マイクロソフトアカウント</strong> を取得しておいてください
+      (既にアカウントを持っている場合は、それを利用しても問題ありません)。</p>
+      <p>また、そのアカウントでログインして<a
+      href="https://www.bing.com/search?q=Bing+AI&amp;showconv=1">Bingチャット</a>が<strong>実際に利用できること</strong>を確認しておいてください。</p>
+      <ul>
+      <li>https://www.bing.com/search?q=Bing+AI&amp;showconv=1</li>
+      </ul>
+      <figure>
+      <img src="figs/01/bing-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>マイクロソフトアカウントは<a
+      href="https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2F&amp;destrt=home.landing">こちら</a>から取得できます。</p>
       <!-- ---------------------------------------- -->
     </main>
 
