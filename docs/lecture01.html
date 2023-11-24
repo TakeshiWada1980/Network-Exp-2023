@@ -85,13 +85,21 @@ class="toc-section-number">4.2.2</span> 演習 ❼</a></li>
 id="toc-github-pages-を利用したウェブページの公開"><span
 class="toc-section-number">5</span> GitHub Pages
 を利用したウェブページの公開</a></li>
-<li><a href="#おまけ" id="toc-おまけ"><span
-class="toc-section-number">6</span> おまけ</a></li>
 <li><a href="#課題❶-報告書1" id="toc-課題❶-報告書1"><span
-class="toc-section-number">7</span> 課題❶ (報告書1)</a></li>
+class="toc-section-number">6</span> 課題❶ (報告書1)</a></li>
+<li><a href="#参考サイト" id="toc-参考サイト"><span
+class="toc-section-number">7</span> 参考サイト</a>
+<ul>
+<li><a href="#htmlcssjsの動作確認" id="toc-htmlcssjsの動作確認"><span
+class="toc-section-number">7.1</span> HTML/CSS/JSの動作確認</a></li>
+<li><a href="#デザイン配色" id="toc-デザイン配色"><span
+class="toc-section-number">7.2</span> デザイン・配色</a></li>
+</ul></li>
+<li><a href="#おまけ" id="toc-おまけ"><span
+class="toc-section-number">8</span> おまけ</a></li>
 <li><a href="#次回-12月8日-までの準備"
 id="toc-次回-12月8日-までの準備"><span
-class="toc-section-number">8</span> 次回 (12月8日) までの準備</a></li>
+class="toc-section-number">9</span> 次回 (12月8日) までの準備</a></li>
 </ul> 
         <!-- ---------------------------------------- -->
       </div>
@@ -191,6 +199,20 @@ $res.Content</code></pre>
       の頭文字をとったものでファイル転送に特化したプロトコルです。サーバーとクライアント間でファイルを転送するために使用され、ユーザーがファイルをアップロードまたはダウンロードできるようにします。FTPはネットワーク上でのファイルの移動と管理を容易にし、認証メカニズムを備えているため、ユーザー名とパスワードによるアクセス制御が可能です。一般に
       <span class="masked">123</span> 番ポートを使用します。</li>
       </ul>
+      </div>
+      <div class="note type-tips">
+      <p><strong>HTTPのリクエストやレスポンスとは何ですか？</strong></p>
+      <p>HTTPの性質上、その通信は <span
+      class="masked">クラインアント</span>
+      から開始する<strong>リクエスト</strong> (要求)
+      に対して、サーバが<strong>レスポンス</strong> (応答)
+      を返すという手順がとられます。そのことを「<strong>リクエスト／レスポンス型</strong>」といいます。</p>
+      <p>なお、IoTではシステムの用途、目的、規模、通信環境に応じてHTTP以外にも
+      <a
+      href="https://www.google.com/search?q=mqttとは">MQTT</a>、<strong>XMPP</strong>、<strong>AMQP</strong>、<strong>CoAP</strong>
+      などのプロトコルが使用されることがあります。使用されるプロトコルによっては（例えばMQTTでは）<span
+      class="masked">パブリッシュ／サブスクライブ型</span>
+      のIoTシステムとなったりします。</p>
       </div>
       <h3 data-number="2.2.1" id="演習-❷"><span
       class="header-section-number">2.2.1</span> 演習 ❷</h3>
@@ -700,36 +722,16 @@ $res.Content</code></pre>
       href="https://takeshiwada1980.github.io/Programming1-2023/lecture15.html">Git/GitHub入門
       ❷</a></li>
       </ul>
-      <h1 data-number="6" id="おまけ"><span
-      class="header-section-number">6</span> おまけ</h1>
-      <div class="note type-senior">
-      <p><strong>HTMLの構文解析</strong></p>
-      <p>Python では <strong>beautifulsoup4</strong>
-      というライブラリを利用して「HTMLの構文解析」を簡単に実行することができます。例えば、HTMLドキュメントから
-      <code>&lt;h2&gt;</code>
-      タグの内容を全て列挙するようなプログラムは次のように書くことができます。</p>
-      <div class="sourceCode" id="cb12"
-      data-caption="HTML構文解析の例"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> requests</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a>url <span class="op">=</span> <span class="st">&#39;https://takeshiwada1980.github.io/Netwrok-Exp-2023/index.html&#39;</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>res <span class="op">=</span> requests.get(url).text</span>
-<span id="cb12-6"><a href="#cb12-6"></a>soup <span class="op">=</span> BeautifulSoup(res,<span class="st">&#39;html.parser&#39;</span>)</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a>h2_tags <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>)</span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="cf">for</span> tag <span class="kw">in</span> h2_tags:</span>
-<span id="cb12-10"><a href="#cb12-10"></a>  <span class="bu">print</span>(<span class="ss">f&#39;・</span><span class="sc">{</span>tag<span class="sc">.</span>text<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
-      </div>
-      <h1 data-number="7" id="課題❶-報告書1"><span
-      class="header-section-number">7</span> 課題❶ (報告書1)</h1>
+      <h1 data-number="6" id="課題❶-報告書1"><span
+      class="header-section-number">6</span> 課題❶ (報告書1)</h1>
       <p><strong>HTML</strong>と<strong>CSS</strong>を使用して、今後の「就職」や「進学」などの<strong>キャリア活動に利用可能な</strong>
       <strong><em>ポートフォリオ</em></strong>
       を作成してください。無論、<span class="masked">HTML/CSS
       の他に、JavsScript</span> を使用しても構いません
       (歓迎です)。作成したポートフォリオは <strong>GitHub Pages</strong>
       で公開し、その URL (= https://xxxxx.github.io/yyy/zzz.html) を <a
-      href="">GoogleClassroom</a> を通じて提出してください。</p>
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0/a/NjQyMjg2NjIwMTIy/details">GoogleClassroom</a>
+      を通じて提出してください。</p>
       <ul>
       <li><strong><em>提出期限</em></strong> 2023年12月21日 (木) 23時
       <ul>
@@ -742,13 +744,13 @@ $res.Content</code></pre>
       <li><strong><em>想定する閲覧者</em></strong>
       <ul>
       <li>企業の採用担当者 (人事) と技術者。</li>
-      <li>大学において、高専からの編入学希望者の研究室見学を受け入れる教授。</li>
+      <li>高専からの編入生の研究室見学を受け入れる大学教授。</li>
       </ul></li>
       <li>提出された課題は
       <strong>メカトロニクスコースの教員とクラスの学生に共有
       (公開)</strong> します。</li>
       </ul>
-      <p>今回作成してもらうものは「第1版」として位置づけであり、今後の学生生活で、卒業研究の内容など、コンテンツを追加・更新し、構造やデザインをブラッシュアップしていくものと捉えてください。</p>
+      <p>今回作成してもらうものは「第1版」として位置づけであり、今後の学生生活で、卒業研究の内容などのコンテンツを追加・更新し、構造やデザインをブラッシュアップしていくものと捉えてください。</p>
       <div class="note type-tips">
       <p><strong>ポートフォリオとは</strong></p>
       <p>エンジニア (主にICT系)
@@ -787,19 +789,24 @@ $res.Content</code></pre>
       </div>
       <p>ポートフォリオのを構成するコンテンツ や レイアウト
       (デザインを含む)
-      は自由ですが、次の内容については必ず含めるようにしてください。</p>
+      は自由ですが、<strong>次の内容については必ず含めるようにしてください</strong>。</p>
       <ul>
-      <li>所属と学年 /
-      年齢。最もぼかした表現としては「高専4年生」「高専生(19歳)」。無論、より詳しく記載してもOKです。</li>
-      <li>基礎研究の成果物とプロジェクト概要の説明
-      (プロジェクトの位置づけ、取組み期間、チーム人数、自分の役割・担当)。写真や動画などを付けてください
+      <li><strong>所属と学年 /
+      年齢</strong>。最もぼかした表現としては「高専4年生」「高専生(19歳)」。無論、より詳しく記載してもOKです。</li>
+      <li><strong>CAD設計製図</strong>、<strong>情報処理Ⅱ</strong>、<strong>特別研究</strong>
+      などの科目における成果物 (自由課題作品や製作物など) を
+      <strong>2個以上</strong>
+      掲載してください。各成果物には、文章と1枚以上の写真をつけてください。技術系クラブに所属している場合は、そこでの成果物でも結構です。</li>
+      <li><strong>基礎研究 (前期)
+      の成果物とプロジェクト概要の説明</strong>
+      (プロジェクトの位置づけ、取組み期間、チーム人数、自分の役割・担当)。文章のほか、写真や動画などを付けてください
       (必ず1枚以上の写真をつけてください)。</li>
       <li>各種工作機械やプログラミング言語、ソフトウェア
       (ウェブサービス) に関する経験・スキルを示すもの。
       <ul>
       <li>工作機械としては、卓上旋盤、卓上ボール盤、レーザーカッタ、3Dプリンタについては学校授業レベルの使用経験があるはずです。</li>
       <li>プログラミング言語やソフトウェア (ウェブサービス)
-      としては少なくとも「Python言語」「Arduino言語」「Fusion
+      としては少なくとも「C言語」「Python言語」「Arduino言語」「Fusion
       360」「KiCad」「Creo
       Parametric」については学校授業レベルの使用経験があるはずです。</li>
       <li>閲覧者が皆さんのスキルや経験を適切に評価できるように、明確かつ適切に記述する必要があります。<strong>誤解を招かないように</strong>
@@ -807,12 +814,70 @@ $res.Content</code></pre>
       class="masked">過大評価あるいは過小評価されないように</span>)、自身の経験やスキルを
       <strong>客観的</strong> かつ <strong>具体的</strong>
       に記載するように意識してください。</li>
-      <li>ポートフォリオの書き方や構成に<strong>「正解」は存在しません</strong>。悩むところがあれば、クラスメイトと一緒に考えたり、ChatGPT
-      に相談したり、ウェブで公開されている多数のポートフォリオを参考にしたりしてください。</li>
       </ul></li>
       </ul>
-      <h1 data-number="8" id="次回-12月8日-までの準備"><span
-      class="header-section-number">8</span> 次回 (12月8日)
+      <p>ポートフォリオの書き方や構成に<strong>「正解」は存在しません</strong>。悩むところがあれば、クラスメイトと一緒に考えたり、ChatGPT
+      に相談したり、ウェブで公開されている様々なポートフォリオを参考にしたりしてください。</p>
+      <h1 data-number="7" id="参考サイト"><span
+      class="header-section-number">7</span> 参考サイト</h1>
+      <p>ポートフォリオの作成にあたっては、以下のサイトを参考にしてください。</p>
+      <h2 data-number="7.1" id="htmlcssjsの動作確認"><span
+      class="header-section-number">7.1</span>
+      HTML/CSS/JSの動作確認</h2>
+      <ul>
+      <li><a href="https://codepen.io/">CodePen</a>
+      <ul>
+      <li>CSS Only: <a
+      href="https://codepen.io/zastrow/pen/eYxvQZW">作成例01</a>、<a
+      href="https://codepen.io/thebabydino/pen/bGzeQrv">作成例02</a>、<a
+      href="https://codepen.io/MarkBoots/pen/JjeNRyX">作成例03</a>、<a
+      href="https://codepen.io/Adir-SL/pen/vYVaXmw">作成例04</a>、<a
+      href="https://codepen.io/ShadowShahriar/pen/LYgeNLB">作成例05</a>、<a
+      href="https://codepen.io/ash_creator/pen/zYaZXLJ">作成例06</a>、</li>
+      <li>CSS + JS: <a
+      href="https://codepen.io/adamcurzon/pen/qBgpaVX">作成例02</a>、<a
+      href="https://codepen.io/daviddarnes/pen/zYyBWMm">作成例02</a>、<a
+      href="https://codepen.io/kevinleedrum/pen/gOjqzOe">作成例03</a>、</li>
+      </ul></li>
+      <li><a href="https://jsfiddle.net/">JSFiddle</a></li>
+      </ul>
+      <h2 data-number="7.2" id="デザイン配色"><span
+      class="header-section-number">7.2</span> デザイン・配色</h2>
+      <ul>
+      <li><a href="https://colors.design4u.jp/">Chart Color
+      Generator</a></li>
+      <li><a href="https://webgradients.com/">WebGradients</a></li>
+      <li><a href="https://nipponcolors.com/">NIPPON COLORS</a></li>
+      <li><a href="https://colorhunt.co/">Color Hunt</a></li>
+      <li><a href="https://gradient.shapefactory.co/">Gradient</a></li>
+      <li><a href="https://www.colordic.org/">WEB色見本</a></li>
+      <li><a href="https://mycolor.space/">ColorSpace</a></li>
+      <li><a href="https://www.peko-step.com/tool/tfcolor.html">PEKO
+      STEP</a></li>
+      </ul>
+      <h1 data-number="8" id="おまけ"><span
+      class="header-section-number">8</span> おまけ</h1>
+      <div class="note type-senior">
+      <p><strong>HTMLの構文解析</strong></p>
+      <p>Python では <strong>beautifulsoup4</strong>
+      というライブラリを利用して「HTMLの構文解析」を簡単に実行することができます。例えば、HTMLドキュメントから
+      <code>&lt;h2&gt;</code>
+      タグの内容を全て列挙するようなプログラムは次のように書くことができます。</p>
+      <div class="sourceCode" id="cb12"
+      data-caption="HTML構文解析の例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> requests</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>url <span class="op">=</span> <span class="st">&#39;https://takeshiwada1980.github.io/Netwrok-Exp-2023/index.html&#39;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>res <span class="op">=</span> requests.get(url).text</span>
+<span id="cb12-6"><a href="#cb12-6"></a>soup <span class="op">=</span> BeautifulSoup(res,<span class="st">&#39;html.parser&#39;</span>)</span>
+<span id="cb12-7"><a href="#cb12-7"></a></span>
+<span id="cb12-8"><a href="#cb12-8"></a>h2_tags <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="cf">for</span> tag <span class="kw">in</span> h2_tags:</span>
+<span id="cb12-10"><a href="#cb12-10"></a>  <span class="bu">print</span>(<span class="ss">f&#39;・</span><span class="sc">{</span>tag<span class="sc">.</span>text<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      </div>
+      <h1 data-number="9" id="次回-12月8日-までの準備"><span
+      class="header-section-number">9</span> 次回 (12月8日)
       までの準備</h1>
       <p>次回は、<strong>生成系AI (生成型AI)</strong>
       に関する内容を取り上げます。そのなかで Microsoft Bing
