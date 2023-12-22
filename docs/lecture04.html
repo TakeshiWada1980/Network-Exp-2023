@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <script>
+      MathJax = {
+        chtml: { displayAlign: "left", displayIndent: "1em" },
+      };
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第04回 後期 4H 実験実習</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#各種連絡" id="toc-各種連絡"><span
+class="toc-section-number">1</span> 各種連絡</a></li>
+<li><a href="#準備-復習" id="toc-準備-復習"><span
+class="toc-section-number">2</span> 準備 (復習)</a></li>
+<li><a href="#appsscriptの実行-復習"
+id="toc-appsscriptの実行-復習"><span class="toc-section-number">3</span>
+AppsScriptの実行 (復習)</a>
+<ul>
+<li><a href="#ショートカットキー" id="toc-ショートカットキー"><span
+class="toc-section-number">3.1</span> ショートカットキー</a></li>
+</ul></li>
+<li><a href="#配列" id="toc-配列"><span
+class="toc-section-number">4</span> 配列</a>
+<ul>
+<li><a href="#複数セルに一括して値を設定"
+id="toc-複数セルに一括して値を設定"><span
+class="toc-section-number">4.1</span>
+複数セルに一括して値を設定</a></li>
+<li><a href="#配列要素の動的拡張" id="toc-配列要素の動的拡張"><span
+class="toc-section-number">4.2</span> 配列要素の動的拡張</a></li>
+<li><a href="#配列要素のランダム選択"
+id="toc-配列要素のランダム選択"><span
+class="toc-section-number">4.3</span> 配列要素のランダム選択</a></li>
+</ul></li>
+<li><a href="#プログラムのファイル分割"
+id="toc-プログラムのファイル分割"><span
+class="toc-section-number">5</span> プログラムのファイル分割</a></li>
+<li><a href="#セルの色の設定" id="toc-セルの色の設定"><span
+class="toc-section-number">6</span> セルの色の設定</a></li>
+<li><a href="#line-notify-との連携" id="toc-line-notify-との連携"><span
+class="toc-section-number">7</span> LINE Notify との連携</a></li>
+<li><a href="#時間に関する演算" id="toc-時間に関する演算"><span
+class="toc-section-number">8</span> 時間に関する演算</a></li>
+<li><a href="#urlパラメータの処理" id="toc-urlパラメータの処理"><span
+class="toc-section-number">9</span> URLパラメータの処理</a>
+<ul>
+<li><a href="#準備と復習" id="toc-準備と復習"><span
+class="toc-section-number">9.1</span> 準備と復習</a></li>
+<li><a href="#python-からのウェブapiの実行テスト"
+id="toc-python-からのウェブapiの実行テスト"><span
+class="toc-section-number">9.2</span> Python
+からのウェブAPIの実行テスト</a></li>
+<li><a href="#urlパラメータに応じた処理の分岐"
+id="toc-urlパラメータに応じた処理の分岐"><span
+class="toc-section-number">9.3</span>
+URLパラメータに応じた処理の分岐</a></li>
+<li><a href="#json形式のレスポンス" id="toc-json形式のレスポンス"><span
+class="toc-section-number">9.4</span> JSON形式のレスポンス</a></li>
+</ul></li>
+<li><a href="#html-のレスポンス" id="toc-html-のレスポンス"><span
+class="toc-section-number">10</span> HTML のレスポンス</a></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2023-4H 電子機械工学実験実習I (後期) 第04回 講義資料</p>
+      <p>毎週金曜日 5～8時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="各種連絡"><span
+      class="header-section-number">1</span> 各種連絡</h1>
+      <ul>
+      <li><strong><em>課題❶</em></strong> の提出確認と共有
+      <ul>
+      <li><strong>提出先</strong>: <a
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0/a/NjQyMjg2NjIwMTIy/details">GoogleClassroom</a></li>
+      </ul></li>
+      <li><strong><em>課題❷</em></strong> の提出期限の確認
+      <ul>
+      <li><strong>期限</strong>: 2024年01月11日 (木) 23時</li>
+      <li><strong>提出先</strong>: <a
+      href="https://classroom.google.com/c/NjI0NTk1MjQ3NzM0/a/NjQ0MzU1MzY0OTM3/details">GoogleClassroom</a></li>
+      </ul></li>
+      <li>工場見学・会社見学に関する案内</li>
+      </ul>
+      <h1 data-number="2" id="準備-復習"><span
+      class="header-section-number">2</span> 準備 (復習)</h1>
+      <p>学校標準のGoogleアカウントで GoogleWorkspace
+      にログインして、Googleスプレッドシートを新規作成して、ファイル名を
+      <code>GasApp02_NN_Name</code>
+      に変更してください。出席番号「3番」の「高専太郎」の場合は
+      <code>GasApp02_03_高専太郎</code> となるはずです。</p>
+      <ul>
+      <li>前回作成したファイルは <code>GasApp01_...</code> で、今回は
+      <code>GasApp02_...</code> になります。</li>
+      </ul>
+      <p>また、前回と同じ手順で<a
+      href="lecture03.html#スプレッドシートにおける-apps-script-の有効化">Apps
+      Script の有効化</a>をしてください。プロジェクト名は
+      <code>GasApp02_03_高専太郎</code> としてください。</p>
+      <h1 data-number="3" id="appsscriptの実行-復習"><span
+      class="header-section-number">3</span> AppsScriptの実行
+      (復習)</h1>
+      <p>プロジェクトを有効化したら、<code>コード.gs</code>
+      次のプログラムを貼付けてください。</p>
+      <div class="sourceCode" id="cb1"
+      data-caption="AppsScriptの実行と動作確認"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">function</span> <span class="fu">getDiceNum</span>(n) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>n<span class="op">+</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">function</span> <span class="fu">writeValue_01</span>() {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="st">&#39;A1&#39;</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="kw">let</span> r <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">.</span><span class="fu">getRange</span>(t)<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  x <span class="op">=</span> <span class="fu">getDiceNum</span>(<span class="dv">6</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  r<span class="op">.</span><span class="fu">setValue</span>(x)<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`セル </span><span class="sc">${</span>t<span class="sc">}</span><span class="vs"> に </span><span class="sc">${</span>x<span class="sc">}</span><span class="vs"> を書き込みました。`</span>)<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">function</span> <span class="fu">onOpen</span>() {</span>
+<span id="cb1-14"><a href="#cb1-14"></a>  <span class="kw">const</span> ui <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getUi</span>()<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>  ui<span class="op">.</span><span class="fu">createMenu</span>(<span class="st">&#39;GAS-1&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="op">.</span><span class="fu">addItem</span>(<span class="st">&#39;セルA1に乱数をセット&#39;</span><span class="op">,</span> <span class="st">&#39;writeValue_01&#39;</span>)</span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="op">.</span><span class="fu">addToUi</span>()<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>}</span></code></pre></div>
+      <p>次のことを確認してください。</p>
+      <ul>
+      <li>「<strong>Gasタブ</strong>」から <code>writeValue_01</code>
+      が実行できること。</li>
+      <li>「<strong>シートタブ</strong>
+      (要リロード)」のメニューから上記関数が実行できること</li>
+      <li>プログラムの各行の意味</li>
+      </ul>
+      <p>意図したような動作をしない場合、前回の<a
+      href="lecture03.html#開発に際しての注意点">開発に際しての注意点</a>を確認して対処してください。</p>
+      <h2 data-number="3.1" id="ショートカットキー"><span
+      class="header-section-number">3.1</span> ショートカットキー</h2>
+      <p>次のショートカットキーを利用するようにしてください。</p>
+      <ul>
+      <li>保存: <code>Ctrl+S</code> (Gasエディタの機能)</li>
+      <li>実行: <code>Ctrl+R</code> ( 〃 )</li>
+      <li>コメントアウト/アンコメント: <code>Ctrl+/</code> ( 〃 )</li>
+      <li>整形: <code>Shft+Alt+F</code> ( 〃 )</li>
+      <li>タブの切り替え: <code>Ctrl+Tab</code> (Chromeの機能)</li>
+      </ul>
+      <h1 data-number="4" id="配列"><span
+      class="header-section-number">4</span> 配列</h1>
+      <p>Apps Script の「配列」について学びます。</p>
+      <h2 data-number="4.1" id="複数セルに一括して値を設定"><span
+      class="header-section-number">4.1</span>
+      複数セルに一括して値を設定</h2>
+      <p>Apps Script (JavaScript) では、C言語と同様に
+      <code>[10,20,30]</code>
+      のようにして配列を与えることができる。また、<code>[[10,20,30],[40,50,60]]</code>
+      のようにして <span class="masked">2行3列</span>
+      の2次元配列を与えることができる。</p>
+      <p><strong>2次元配列</strong> (≠1次元配列) を引数にして
+      <code>setValues</code> メソッド (≠<code>setValue</code> メソッド)
+      により <strong>セル範囲</strong> に値を設定することができる。</p>
+      <div class="sourceCode" id="cb2"
+      data-caption="数セルに一括して値を設定"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">function</span> <span class="fu">writeValues_01</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">let</span> arr <span class="op">=</span> [[<span class="dv">10</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">30</span>]<span class="op">,</span>[<span class="dv">40</span><span class="op">,</span><span class="dv">50</span><span class="op">,</span><span class="dv">60</span>]]<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="kw">let</span> st <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="kw">let</span> row <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// 行 1から開始</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">let</span> col <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// 列 1から開始</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">let</span> height <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// 高さ(行数) Number of rows</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">let</span> width  <span class="op">=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// 幅(列数) Number of columns</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="kw">let</span> r <span class="op">=</span> st<span class="op">.</span><span class="fu">getRange</span>(row<span class="op">,</span>col<span class="op">,</span>height<span class="op">,</span>width)<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  r<span class="op">.</span><span class="fu">setValues</span>(arr)<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>}</span></code></pre></div>
+      <p>また、上記の <strong>第08行目</strong> は
+      <code>st.getRange('B1:D2')</code>
+      のように<strong>A1参照方式</strong>の文字列を使って与えることもできる。</p>
+      <hr />
+      <p><strong>演習</strong>: 2次元配列と <code>setValues</code>
+      を使って次ようにセル範囲に値を設定せよ
+      (3回に分けて書き込めばよい)。<strong>ヒント</strong>: <span
+      class="masked">3行1列の2次元配列は <code>[[30],[40],[50]]</code>
+      のように与えることができる</span></p>
+      <figure>
+      <img src="figs/04/sheet-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="4.2" id="配列要素の動的拡張"><span
+      class="header-section-number">4.2</span> 配列要素の動的拡張</h2>
+      <p>Apps Script
+      では、次のようなコードで動的に配列を拡張することができます。</p>
+      <div class="sourceCode" id="cb3"
+      data-caption="配列の動的拡張"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">newArrayTest_01</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="kw">let</span> arr<span class="op">=</span>[]<span class="op">;</span> <span class="co">// 要素数0の「空」の配列</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">5</span><span class="op">;</span>i<span class="op">++</span>){</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    arr[i]<span class="op">=</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span><span class="dv">20</span>)<span class="op">+</span><span class="dv">1</span><span class="op">;</span> <span class="co">// 1～9の乱数</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  }</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr)<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>}</span></code></pre></div>
+      <p><strong>演習1</strong>: <strong>第06行目</strong> の次に
+      <code>console.log(arr[10]);</code>
+      を追加して実行するとどうなるか、結果を予測したうえで実際に確認せよ。</p>
+      <p><strong>演習2</strong>: <strong>第06行目</strong> の次に
+      <code>console.log(arr[-1]);</code>
+      を追加して実行するとどうなるか、結果を予測したうえで実際に確認せよ。Python
+      で同様のインデックス指定をした場合との比較を意識すること。</p>
+      <hr />
+      <p>同様に <strong>2次元配列</strong>
+      については、次のように動的拡張ができます。</p>
+      <div class="sourceCode" id="cb4"
+      data-caption="配列の動的拡張(2次元配列)"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">function</span> <span class="fu">newArrayTest_02</span>() {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">let</span> arr<span class="op">=</span>[]<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">3</span><span class="op">;</span>i<span class="op">++</span>){</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    arr[i]<span class="op">=</span>[]<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">for</span>(<span class="kw">let</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span><span class="dv">5</span><span class="op">;</span>j<span class="op">++</span>){</span>
+<span id="cb4-6"><a href="#cb4-6"></a>      arr[i][j]<span class="op">=</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span><span class="dv">20</span>)<span class="op">+</span><span class="dv">1</span><span class="op">;</span> <span class="co">// 1～9の乱数</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    }</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  }</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr)<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>}</span></code></pre></div>
+      <p><strong>演習3</strong>: セル B1:F10 の各セルに 1～6 までの乱数
+      (整数値) をセットするような関数 <code>writeRandNum_01</code>
+      を作成せよ。また、「<strong>シートタブ</strong>」のメニューの「<strong>GAS-1</strong>」に「<strong>セルB1:F10に乱数をセット</strong>」という項目を追加し、この関数を呼び出すことができるようにせよ。</p>
+      <h2 data-number="4.3" id="配列要素のランダム選択"><span
+      class="header-section-number">4.3</span>
+      配列要素のランダム選択</h2>
+      <div class="sourceCode" id="cb5"
+      data-caption="セルの背景色と文字色の操作"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">function</span> <span class="fu">getCard_01</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">let</span> cardRank <span class="op">=</span> [<span class="st">&#39;SSR&#39;</span><span class="op">,</span> <span class="st">&#39;SR&#39;</span><span class="op">,</span> <span class="st">&#39;R&#39;</span><span class="op">,</span> <span class="st">&#39;N&#39;</span>]<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> cardRank<span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="cf">return</span> cardRank[i]<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="kw">function</span> <span class="fu">tryGacha_01</span>() {</span>
+<span id="cb5-8"><a href="#cb5-8"></a>  <span class="kw">let</span> n <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="kw">let</span> items <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`ガチャを </span><span class="sc">${</span>n<span class="sc">}</span><span class="vs"> 回まわします`</span>)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    items[i] <span class="op">=</span> <span class="fu">getCard_01</span>()<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>  }</span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(items)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>}</span></code></pre></div>
+      <p><strong>演習</strong>:
+      ランクに応じた確率でカードが取得されるような関数
+      <code>getCard_02</code> を実装せよ。</p>
+      <h1 data-number="5" id="プログラムのファイル分割"><span
+      class="header-section-number">5</span>
+      プログラムのファイル分割</h1>
+      <p>関数単位でファイル分割してプログラムを記述することができます。</p>
+      <h1 data-number="6" id="セルの色の設定"><span
+      class="header-section-number">6</span> セルの色の設定</h1>
+      <p>セルの背景色と文字色は、次のように設定することができます。</p>
+      <div class="sourceCode" id="cb6"
+      data-caption="セルの背景色と文字色の操作"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// 背景色設定</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">function</span> <span class="fu">setBgColor</span>() {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="st">&#39;A1&#39;</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="kw">let</span> r <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">.</span><span class="fu">getRange</span>(t)<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  r<span class="op">.</span><span class="fu">setBackground</span>(<span class="st">&#39;#FFFF00&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>}</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">// 文字色設定</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="kw">function</span> <span class="fu">setFontColor</span>() {</span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="st">&#39;A1&#39;</span><span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="kw">let</span> r <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">.</span><span class="fu">getRange</span>(t)<span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>  r<span class="op">.</span><span class="fu">setFontColor</span>(<span class="st">&#39;Red&#39;</span>)<span class="op">;</span> </span>
+<span id="cb6-13"><a href="#cb6-13"></a>}</span></code></pre></div>
+      <p>次のように <code>rgbToHex</code>
+      関数を定義すれば「RGBの3つの数値 <code>0</code> ～
+      <code>255</code>」により色指定ができます。</p>
+      <div class="sourceCode" id="cb7"
+      data-caption="数値による色の設定"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">function</span> <span class="fu">rgbToHex</span>(r<span class="op">,</span> g<span class="op">,</span> b) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="cf">return</span> <span class="st">&#39;#&#39;</span> <span class="op">+</span> ((<span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">24</span>) <span class="op">+</span> (r <span class="op">&lt;&lt;</span> <span class="dv">16</span>) <span class="op">+</span> (g <span class="op">&lt;&lt;</span> <span class="dv">8</span>) <span class="op">+</span> b)<span class="op">.</span><span class="fu">toString</span>(<span class="dv">16</span>)<span class="op">.</span><span class="fu">slice</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>}</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">// 文字色設定</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="kw">function</span> <span class="fu">setFontColor</span>() {</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="kw">let</span> t <span class="op">=</span> <span class="st">&#39;A1&#39;</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="kw">let</span> r <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">.</span><span class="fu">getRange</span>(t)<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="kw">let</span> c <span class="op">=</span> <span class="fu">rgbToHex</span>(<span class="dv">255</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">255</span>)<span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`c =&gt; </span><span class="sc">${</span>c<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  r<span class="op">.</span><span class="fu">setFontColor</span>(c)<span class="op">;</span> </span>
+<span id="cb7-12"><a href="#cb7-12"></a>}</span></code></pre></div>
+      <h1 data-number="7" id="line-notify-との連携"><span
+      class="header-section-number">7</span> LINE Notify との連携</h1>
+      <p>Apps Script では<a href="https://notify-bot.line.me/ja/">LINE
+      Notify</a>との連携が簡単に実行できます。</p>
+      <div class="sourceCode" id="cb8"
+      data-caption="LINE Notifyのサンプル"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">function</span> <span class="fu">lineNotify</span>() {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="kw">const</span> token <span class="op">=</span> <span class="st">&#39;xxxxxxxxxxxxxxx&#39;</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="kw">const</span> lineNotifyApi <span class="op">=</span> <span class="st">&#39;https://notify-api.line.me/api/notify&#39;</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="kw">let</span> message <span class="op">=</span> <span class="st">&#39;</span><span class="sc">\n</span><span class="st">テスト投稿です。</span><span class="sc">\n</span><span class="st">こんにちは。&#39;</span><span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="kw">const</span> options <span class="op">=</span> {</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="st">&quot;method&quot;</span>  <span class="op">:</span> <span class="st">&quot;post&quot;</span><span class="op">,</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="st">&quot;payload&quot;</span> <span class="op">:</span> {<span class="st">&quot;message&quot;</span><span class="op">:</span> message}<span class="op">,</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="st">&quot;headers&quot;</span> <span class="op">:</span> {<span class="st">&quot;Authorization&quot;</span><span class="op">:</span><span class="st">&quot;Bearer &quot;</span> <span class="op">+</span> token}</span>
+<span id="cb8-9"><a href="#cb8-9"></a>   }<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>   UrlFetchApp<span class="op">.</span><span class="fu">fetch</span>(lineNotifyApi<span class="op">,</span> options)<span class="op">;</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>}</span></code></pre></div>
+      <h1 data-number="8" id="時間に関する演算"><span
+      class="header-section-number">8</span> 時間に関する演算</h1>
+      <div class="sourceCode" id="cb9"
+      data-caption="時間の加算と減算"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">function</span> <span class="fu">calcDatetime_01</span>() {</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">let</span> format <span class="op">=</span> <span class="st">&#39;yyyy年MM月dd日 HH時mm分ss秒&#39;</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="kw">let</span> dt1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="kw">let</span> dt1_str <span class="op">=</span> Utilities<span class="op">.</span><span class="fu">formatDate</span>(dt1<span class="op">,</span> <span class="st">&#39;Asia/Tokyo&#39;</span><span class="op">,</span> format)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>  <span class="kw">let</span> dt2 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(dt1<span class="op">.</span><span class="fu">getTime</span>())<span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>  dt2<span class="op">.</span><span class="fu">setDate</span>(dt1<span class="op">.</span><span class="fu">getDate</span>() <span class="op">+</span> <span class="dv">1</span>)<span class="op">;</span> <span class="co">// 1日後</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="kw">let</span> dt2_str <span class="op">=</span> Utilities<span class="op">.</span><span class="fu">formatDate</span>(dt2<span class="op">,</span> <span class="st">&#39;Asia/Tokyo&#39;</span><span class="op">,</span> format)<span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>dt1_str<span class="sc">}</span><span class="vs"> の1日後は </span><span class="sc">${</span>dt2_str<span class="sc">}</span><span class="vs"> です。`</span>)<span class="op">;</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a></span>
+<span id="cb9-13"><a href="#cb9-13"></a>  <span class="kw">let</span> dt3 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(dt1<span class="op">.</span><span class="fu">getTime</span>())<span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>  dt3<span class="op">.</span><span class="fu">setHours</span>(dt1<span class="op">.</span><span class="fu">getHours</span>() <span class="op">-</span> <span class="dv">23</span>)<span class="op">;</span> <span class="co">// 23時間前</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>  <span class="kw">let</span> dt3_str <span class="op">=</span> Utilities<span class="op">.</span><span class="fu">formatDate</span>(dt3<span class="op">,</span> <span class="st">&#39;Asia/Tokyo&#39;</span><span class="op">,</span> format)<span class="op">;</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>dt1_str<span class="sc">}</span><span class="vs"> の23時間前は </span><span class="sc">${</span>dt3_str<span class="sc">}</span><span class="vs"> です。`</span>)<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb10"
+      data-caption="指定時刻までの残り時間の計算1"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">function</span> <span class="fu">calcDatetime_02</span>() {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="kw">let</span> dt1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(<span class="st">&#39;2023/12/31 00:00:00&#39;</span>)<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="kw">let</span> dt2 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="kw">let</span> hours <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((dt1 <span class="op">-</span> dt2) <span class="op">/</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>))<span class="op">;</span> <span class="co">// ミリ秒を時間に変換</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`あと </span><span class="sc">${</span>hours<span class="sc">}</span><span class="vs"> 時間`</span>)<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb11"
+      data-caption="定時刻までの残り時間の計算2"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">function</span> <span class="fu">calcDatetime_03</span>() {</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="kw">let</span> dt1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>(<span class="st">&#39;2023/12/31 00:00:00&#39;</span>)<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="kw">let</span> dt2 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="kw">let</span> ts <span class="op">=</span> dt1 <span class="op">-</span> dt2<span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="kw">let</span> hours <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(ts <span class="op">/</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>))<span class="op">;</span> <span class="co">// ミリ秒を時間に変換して整数部分を取得</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="kw">let</span> minutes <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>((ts <span class="op">%</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>)) <span class="op">/</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">60</span>))<span class="op">;</span> <span class="co">// 残りのミリ秒を分に変換</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`あと </span><span class="sc">${</span>hours<span class="sc">}</span><span class="vs"> 時間 </span><span class="sc">${</span>minutes<span class="sc">}</span><span class="vs"> 分`</span>)<span class="op">;</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>}</span></code></pre></div>
+      <h1 data-number="9" id="urlパラメータの処理"><span
+      class="header-section-number">9</span> URLパラメータの処理</h1>
+      <h2 data-number="9.1" id="準備と復習"><span
+      class="header-section-number">9.1</span> 準備と復習</h2>
+      <p>HTTP GET をトリガーとする関数 <code>doGet</code> を定義し、<a
+      href="lecture03.html#http-get-をトリガーとする関数の実行">デプロイ設定</a>を行ない、ウェブブラウザからアクセスして正常に動作することを確認せよ。</p>
+      <div class="sourceCode" id="cb12" data-caption="doGet"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">function</span> <span class="fu">doGet</span>(e) {</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="kw">let</span> msg1 <span class="op">=</span> <span class="vs">`ランク「</span><span class="sc">${</span><span class="fu">getCard_01</span>()<span class="sc">}</span><span class="vs">」のカードをゲットしました`</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="kw">let</span> msg2 <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(e<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="st">&#39;  &#39;</span>)<span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="kw">let</span> msg <span class="op">=</span> msg1 <span class="op">+</span> <span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">&#39;</span> <span class="op">+</span> <span class="st">&#39;e = &#39;</span> <span class="op">+</span> msg2<span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(msg)<span class="op">;</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="cf">return</span> ContentService<span class="op">.</span><span class="fu">createTextOutput</span>(msg)<span class="op">;</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>}</span></code></pre></div>
+      <h2 data-number="9.2"
+      id="python-からのウェブapiの実行テスト"><span
+      class="header-section-number">9.2</span> Python
+      からのウェブAPIの実行テスト</h2>
+      <p>GoogleColab でノートブックを作成し、Pythonプログラムから上記の
+      ウェブAPI から応答が得られることを確認せよ。</p>
+      <div class="sourceCode" id="cb13"
+      data-caption="doGetのテスト"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="im">import</span> requests</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>base_URL <span class="op">=</span> <span class="st">&#39;https://script.google.com/macros/s/&#39;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>deploy_ID <span class="op">=</span> <span class="st">&#39;AKfyxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>URL <span class="op">=</span> base_URL <span class="op">+</span> deploy_ID <span class="op">+</span> <span class="st">&#39;/exec&#39;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a>res <span class="op">=</span> requests.get(URL)</span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="bu">print</span>(res.text)</span></code></pre></div>
+      <h2 data-number="9.3" id="urlパラメータに応じた処理の分岐"><span
+      class="header-section-number">9.3</span>
+      URLパラメータに応じた処理の分岐</h2>
+      <p><code>doGet</code> 関数では <strong>URLパラメータ</strong>
+      を解析して処理を分岐させることができます。パラメータはアドレスの末尾に
+      <code>?type=normal&amp;n=10</code> のような形式で与えます。</p>
+      <div class="sourceCode" id="cb14"
+      data-caption="URLパラメータの処理"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">function</span> <span class="fu">doGet</span>(e) {</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="cf">if</span> (e <span class="op">==</span> <span class="kw">undefined</span>) {</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">warn</span>(<span class="st">&#39;この関数は HTTP GET から実行してください。&#39;</span>)<span class="op">;</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  }</span>
+<span id="cb14-7"><a href="#cb14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8"></a>  <span class="kw">let</span> type <span class="op">=</span> e<span class="op">.</span><span class="at">parameter</span><span class="op">.</span><span class="at">type</span><span class="op">;</span></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  <span class="kw">let</span> n <span class="op">=</span> <span class="bu">Number</span>(e<span class="op">.</span><span class="at">parameter</span><span class="op">.</span><span class="at">n</span>)<span class="op">;</span> <span class="co">// 文字列-&gt;数値</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>  <span class="kw">let</span> msg <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">;</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>  <span class="cf">switch</span> (type) {</span>
+<span id="cb14-12"><a href="#cb14-12"></a>    <span class="cf">case</span> <span class="st">&#39;normal&#39;</span><span class="op">:</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>      msg <span class="op">=</span> <span class="vs">`ノーマルガチャを </span><span class="sc">${</span>n<span class="sc">}</span><span class="vs"> 回まわします`</span><span class="op">;</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>      <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a>    <span class="cf">case</span> <span class="st">&#39;special&#39;</span><span class="op">:</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a>      msg <span class="op">=</span> <span class="vs">`スペシャルガチャを </span><span class="sc">${</span>n<span class="sc">}</span><span class="vs"> 回まわします`</span><span class="op">;</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a>      <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a>      msg <span class="op">=</span> <span class="vs">`不正なパラメータです`</span><span class="op">;</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a>      <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb14-21"><a href="#cb14-21"></a>  }</span>
+<span id="cb14-22"><a href="#cb14-22"></a>  <span class="cf">return</span> ContentService<span class="op">.</span><span class="fu">createTextOutput</span>(msg)<span class="op">;</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a>}</span></code></pre></div>
+      <p><strong>演習</strong> :
+      上記のプログラムを理解し、実際にガチャ内容を含めてレスポンスするような機能を実装せよ。</p>
+      <h2 data-number="9.4" id="json形式のレスポンス"><span
+      class="header-section-number">9.4</span> JSON形式のレスポンス</h2>
+      <p>ウェブAPI のレスポンス形式としては JSON : JavaScript Object
+      Notation が広く採用されています。ウェブAPI を呼び出す Python や
+      JavaScript
+      においても、JSON形式でレスポンスを受けとれると、その後の処理が容易になります。</p>
+      <div class="sourceCode" id="cb15"
+      data-caption="JSON形式のレスポンス"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">function</span> <span class="fu">doGet</span>(e) {</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="kw">let</span> x <span class="op">=</span> <span class="fu">getCard_01</span>()</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="kw">let</span> res <span class="op">=</span> { <span class="dt">code</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">msg</span><span class="op">:</span> <span class="vs">`ランク「</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">」のカードを入手`</span><span class="op">,</span><span class="dt">card</span><span class="op">:</span> x }<span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="kw">let</span> jsonStr <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(res)<span class="op">;</span> <span class="co">// JSON文字列に変換 (シリアライズ)</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(jsonStr)<span class="op">;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="cf">return</span> ContentService<span class="op">.</span><span class="fu">createTextOutput</span>(jsonStr)<span class="op">;</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb16" data-caption="JSON型の処理"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="im">import</span> json       <span class="co"># 要インポート</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="im">import</span> requests</span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a>base_URL <span class="op">=</span> <span class="st">&#39;https://script.google.com/macros/s/&#39;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>deploy_ID <span class="op">=</span> <span class="st">&#39;AKfycxxxxxxxxxxxxxxxx&#39;</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a>URL <span class="op">=</span> base_URL <span class="op">+</span> deploy_ID <span class="op">+</span> <span class="st">&#39;/exec&#39;</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9"></a>res1 <span class="op">=</span> requests.get(URL).text</span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="bu">print</span>(<span class="ss">f&#39;tyep(res1) =&gt; </span><span class="sc">{</span><span class="bu">type</span>(res1)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="bu">print</span>(<span class="ss">f&#39;res =&gt; </span><span class="sc">{</span>res1<span class="sc">}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>)</span>
+<span id="cb16-12"><a href="#cb16-12"></a></span>
+<span id="cb16-13"><a href="#cb16-13"></a>res2 <span class="op">=</span> json.loads(res1) <span class="co"># JSONのデシリアライズ</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="bu">print</span>(<span class="ss">f&#39;tyep(res2) =&gt; </span><span class="sc">{</span><span class="bu">type</span>(res2)<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 辞書型</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a><span class="bu">print</span>(<span class="bu">type</span>(res2[<span class="st">&#39;code&#39;</span>]))   <span class="co"># 整数型</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a><span class="bu">print</span>(<span class="bu">type</span>(res2[<span class="st">&#39;msg&#39;</span>]))    <span class="co"># 文字列型</span></span>
+<span id="cb16-18"><a href="#cb16-18"></a><span class="bu">print</span>(<span class="bu">type</span>(res2[<span class="st">&#39;cards&#39;</span>]))  <span class="co"># リスト型</span></span></code></pre></div>
+      <h1 data-number="10" id="html-のレスポンス"><span
+      class="header-section-number">10</span> HTML のレスポンス</h1>
+      <p>詳細は次回に解説します。</p>
+      <div class="sourceCode" id="cb17"
+      data-caption="JSON形式のレスポンス"><pre
+      class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">function</span> <span class="fu">writeMsg</span>() {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;こんにちは&quot;</span>)<span class="op">;</span>  </span>
+<span id="cb17-3"><a href="#cb17-3"></a>}</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="kw">function</span> <span class="fu">getGreeting</span>() {</span>
+<span id="cb17-6"><a href="#cb17-6"></a>  arr <span class="op">=</span> [<span class="st">&#39;01-おはよう&#39;</span><span class="op">,</span><span class="st">&#39;02-こんにちは&#39;</span><span class="op">,</span><span class="st">&#39;03-こんばんは&#39;</span><span class="op">,</span><span class="st">&#39;04-ども&#39;</span>]<span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="kw">let</span> i <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> arr<span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr[i])<span class="op">;</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="cf">return</span> arr[i]<span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>}</span>
+<span id="cb17-11"><a href="#cb17-11"></a></span>
+<span id="cb17-12"><a href="#cb17-12"></a><span class="kw">function</span> <span class="fu">writeCell</span>(){</span>
+<span id="cb17-13"><a href="#cb17-13"></a>  <span class="kw">let</span> s <span class="op">=</span> SpreadsheetApp<span class="op">.</span><span class="fu">getActiveSheet</span>()<span class="op">;</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>  <span class="kw">let</span> r <span class="op">=</span> s<span class="op">.</span><span class="fu">getRange</span>(<span class="st">&#39;A1&#39;</span>)<span class="op">;</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>  r<span class="op">.</span><span class="fu">setValue</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span><span class="dv">6</span>)<span class="op">+</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a>}</span>
+<span id="cb17-17"><a href="#cb17-17"></a></span>
+<span id="cb17-18"><a href="#cb17-18"></a><span class="kw">var</span> msg<span class="op">;</span></span>
+<span id="cb17-19"><a href="#cb17-19"></a><span class="kw">function</span> <span class="fu">doGet</span>(e){</span>
+<span id="cb17-20"><a href="#cb17-20"></a>  msg <span class="op">=</span> <span class="st">&#39;あいうえあ&#39;</span><span class="op">;</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a>  <span class="cf">return</span> HtmlService<span class="op">.</span><span class="fu">createTemplateFromFile</span>(<span class="st">&#39;app&#39;</span>)<span class="op">.</span><span class="fu">evaluate</span>()<span class="op">;</span></span>
+<span id="cb17-22"><a href="#cb17-22"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb18" data-caption="app.html"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>    <span class="kw">&lt;base</span> <span class="er">target</span><span class="ot">=</span><span class="st">&quot;_top&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="kw">&lt;?</span>!= HtmlService.createHtmlOutputFromFile(&#39;css&#39;).getContent(); <span class="kw">?&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a></span>
+<span id="cb18-9"><a href="#cb18-9"></a>    <span class="kw">&lt;h1&gt;</span>伝言板<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a>    <span class="kw">&lt;p&gt;&lt;?</span>= getGreeting() <span class="kw">?&gt;</span> <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a>    <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;伝言エリア&quot;</span><span class="kw">&gt;</span>伝言はまだありません<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>    </span>
+<span id="cb18-13"><a href="#cb18-13"></a>    <span class="kw">&lt;div&gt;</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a>      <span class="kw">&lt;input</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;入力内容&quot;</span><span class="kw">&gt;&lt;button</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">&quot;setMsg();&quot;</span><span class="kw">&gt;</span>書き込み<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb18-15"><a href="#cb18-15"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb18-16"><a href="#cb18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17"></a>    <span class="kw">&lt;?</span>!= HtmlService.createHtmlOutputFromFile(&#39;script&#39;).getContent(); <span class="kw">?&gt;</span></span>
+<span id="cb18-18"><a href="#cb18-18"></a>    </span>
+<span id="cb18-19"><a href="#cb18-19"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb18-20"><a href="#cb18-20"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+      <div class="sourceCode" id="cb19" data-caption="css.html"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;style&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  body {</span>
+<span id="cb19-3"><a href="#cb19-3"></a>    <span class="kw">background-color</span>: <span class="cn">#fffdee</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  }</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="kw">&lt;/style&gt;</span></span></code></pre></div>
+      <div class="sourceCode" id="cb20" data-caption="script.html"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">function</span> <span class="fu">setMsg</span>(){</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  伝言エリア<span class="op">.</span><span class="at">innerText</span> <span class="op">=</span> 入力内容<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>}</span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/Network-Exp-2023/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // 画像にリンクを付与
+        // let images = document.querySelectorAll("figure img");
+        // Array.from(images).forEach((img) => {
+        //   img.onclick = () => {
+        //     location.href = img.getAttribute("src");
+        //   };
+        // });
+      };
+    </script>
+  </body>
+</html>
