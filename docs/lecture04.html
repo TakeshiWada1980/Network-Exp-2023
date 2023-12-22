@@ -222,7 +222,7 @@ class="toc-section-number">10</span> HTML のレスポンス</a></li>
       class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">newArrayTest_01</span>() {</span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="kw">let</span> arr<span class="op">=</span>[]<span class="op">;</span> <span class="co">// 要素数0の「空」の配列</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">5</span><span class="op">;</span>i<span class="op">++</span>){</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    arr[i]<span class="op">=</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span><span class="dv">20</span>)<span class="op">+</span><span class="dv">1</span><span class="op">;</span> <span class="co">// 1～9の乱数</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    arr[i]<span class="op">=</span><span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span><span class="dv">9</span>)<span class="op">+</span><span class="dv">1</span><span class="op">;</span> <span class="co">// 1～9の乱数</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>  }</span>
 <span id="cb3-6"><a href="#cb3-6"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(arr)<span class="op">;</span></span>
 <span id="cb3-7"><a href="#cb3-7"></a>}</span></code></pre></div>
@@ -442,12 +442,16 @@ class="toc-section-number">10</span> HTML のレスポンス</a></li>
       <div class="sourceCode" id="cb15"
       data-caption="JSON形式のレスポンス"><pre
       class="sourceCode numberSource js numberLines"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">function</span> <span class="fu">doGet</span>(e) {</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="kw">let</span> x <span class="op">=</span> <span class="fu">getCard_01</span>()</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="kw">let</span> res <span class="op">=</span> { <span class="dt">code</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">msg</span><span class="op">:</span> <span class="vs">`ランク「</span><span class="sc">${</span>x<span class="sc">}</span><span class="vs">」のカードを入手`</span><span class="op">,</span><span class="dt">card</span><span class="op">:</span> x }<span class="op">;</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="kw">let</span> jsonStr <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(res)<span class="op">;</span> <span class="co">// JSON文字列に変換 (シリアライズ)</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(jsonStr)<span class="op">;</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="cf">return</span> ContentService<span class="op">.</span><span class="fu">createTextOutput</span>(jsonStr)<span class="op">;</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>}</span></code></pre></div>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="kw">let</span> n <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="kw">let</span> tmp <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="cf">for</span>(<span class="kw">let</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>n<span class="op">;</span>i<span class="op">++</span>){</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    tmp[i]<span class="op">=</span><span class="fu">getCard_01</span>()<span class="op">;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  }</span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="kw">let</span> res <span class="op">=</span> { <span class="dt">code</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">msg</span><span class="op">:</span> <span class="vs">`ガチャを </span><span class="sc">${</span>n<span class="sc">}</span><span class="vs"> 回 (</span><span class="sc">${</span>n<span class="op">*</span><span class="dv">300</span><span class="sc">}</span><span class="vs">円分) まわしました。`</span><span class="op">,</span><span class="dt">cards</span><span class="op">:</span> tmp }<span class="op">;</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="kw">let</span> jsonStr <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>(res)<span class="op">;</span> <span class="co">// JSON文字列に変換</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(jsonStr)<span class="op">;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="cf">return</span> ContentService<span class="op">.</span><span class="fu">createTextOutput</span>(jsonStr)<span class="op">;</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>}</span></code></pre></div>
       <div class="sourceCode" id="cb16" data-caption="JSON型の処理"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="im">import</span> json       <span class="co"># 要インポート</span></span>
